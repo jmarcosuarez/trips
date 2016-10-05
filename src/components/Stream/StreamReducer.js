@@ -1,10 +1,11 @@
-import * as actionTypes from '../constants/actionTypes';
+import { TRACKS_SET } from './StreamActions';
+
 
 const initialState = [];
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case actionTypes.TRACKS_SET:
+    case TRACKS_SET:
       return setTracks(state, action);
   }
   return state;
