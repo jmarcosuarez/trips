@@ -1,0 +1,42 @@
+.dropdown {
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown p {
+  color: #000;
+}
+
+.dropdown button {
+  font-size: 1.25em;
+    background-color: #FAFAFA;
+    width: 252px;
+    border: 1px solid #BDBDBD;
+    outline: none;
+    padding: 8px;
+    margin: 0 0 8px 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdown > div {
+  font-size: 1.25em;
+    background-color: #FAFAFA;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid #BDBDBD;
+    padding: 40px 10px;
+}
+
+.dropdown .active {
+    display: block;
+}

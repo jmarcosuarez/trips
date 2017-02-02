@@ -1,0 +1,33 @@
+.search {
+  border-top: 1px solid #282f44;
+  border-bottom: 1px solid #282f44;
+}
+
+.search ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.search ul > li { display: inline; border-left: 1px solid #282f44; padding-left: 0.3em; }
+.search ul > li:last-child { display: inline; border-right: 1px solid #282f44; padding-left: 0.3em; }
+
+.search p {
+  padding: 1.75rem 0.5rem 0.5rem 0.5rem;
+  font-size: 1.8rem;
+  min-width: 200px;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-start;
+}
+
+.search p > i:last-of-type:not(.different) {
+  margin-left: auto;
+}
+
+.search i {
+  padding: 0 0.5rem;
+}

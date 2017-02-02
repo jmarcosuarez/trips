@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: [
@@ -15,7 +16,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]'
+        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]',
+        include: path.join(__dirname, './src'),
+      },
+      {
+        //  Do not transform vendor's CSS with CSS-modules
+        //  The point is that they remain in global scope
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+        exclude: path.join(__dirname, './src'),
       },
     ],
   },
@@ -23,7 +32,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
   },
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, '../dist'),
     publicPath: '/',
     filename: 'bundle.js',
   },
