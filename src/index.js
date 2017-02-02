@@ -9,10 +9,10 @@ import routes from './routes';
 
 const tracks = [
   {
-    title: 'Some track',
+    title: 'Some data',
   },
   {
-    title: 'Some other track',
+    title: 'Some more data',
   },
 ];
 
