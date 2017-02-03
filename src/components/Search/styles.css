@@ -25,6 +25,10 @@
   width: 280px;
 }
 
+.search li:hover, .search li:active {
+  background: #ececec;
+}
+
 .search p {
   padding: 1.60rem 0.5rem 0.5rem 0.5rem;
   font-size: 1.6rem;

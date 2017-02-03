@@ -10,7 +10,7 @@
 .dropdown button {
   font-size: 1.25em;
   background-color: #FAFAFA;
-  width: 252px;
+  width: 100%;
   border: 1px solid #BDBDBD;
   outline: none;
   padding: 8px;

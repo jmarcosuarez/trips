@@ -20,7 +20,7 @@ body {
 }
 
 header {
-  flex: 0 0 120px;
+  flex: 0 0 80px;
   /*background-color: #ececec;*/
   padding: 10px;
   text-align: center;
@@ -35,8 +35,24 @@ main {
 }
 
 footer {
-  flex: 0 0 90px; /* don’t grow or shrink - just stay at a height of 90px. */ 
+  flex: 0 0 40px; /* don’t grow or shrink - just stay at a height of 90px. */ 
   padding: 10px;
   border-top: 1px solid #ececec;
   /*background-color: #282f44;*/
+}
+footer ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+footer ul > li {
+  color: #282f44;
+  padding-right: 6px;
+}
+
+footer li:after {
+    content: " |";
+}
+footer li:last-child:after {
+    content: "";
 }
