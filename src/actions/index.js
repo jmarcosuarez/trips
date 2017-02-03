@@ -1,8 +1,10 @@
 import { setData, setOption } from './search';
-import { setCount } from './count';
+import { setCounter, increment, decrement } from './counter';
 
 export {
   setData,
   setOption,
-  setCount,
+  setCounter,
+  increment,
+  decrement,
 };

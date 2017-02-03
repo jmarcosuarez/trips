@@ -7,18 +7,18 @@ import Search from './presenter';
 
 function mapStateToProps(state) {
   const data = state.data;
-  const count = state.count;
+  const counter = state.counter;
 
   return {
     data,
-    count,
+    counter,
   };
 }
 function mapDispatchToProps(dispatch) {
   return {
     onClick: bindActionCreators(actions.setOption, dispatch),
-    onIncrementCounter: bindActionCreators(actions.setCount, dispatch),
-    onDecrementCounter: bindActionCreators(actions.setCount, dispatch),
+    increment: bindActionCreators(actions.increment, dispatch),
+    decrement: bindActionCreators(actions.decrement, dispatch),
 
   };
 }

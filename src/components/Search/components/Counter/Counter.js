@@ -7,10 +7,7 @@ export default class Counter extends Component {
   constructor(props) {
     super(props);
     this.onDocumentClick = this.onDocumentClick.bind(this);
-    this.onDecrementCounter = this.onDecrementCounter.bind(this);
-    this.onIncrementCounter = this.onIncrementCounter.bind(this);
     this.onToggle = this.onToggle.bind(this);
-
     this.state = {
       isOpen: false,
     };
@@ -30,23 +27,22 @@ export default class Counter extends Component {
       this.onToggle();
     }
   }
-  onDecrementCounter() {
-    this.props.onDecrementCounterValue(this.props.count);
-  }
-  onIncrementCounter() {
-    this.props.onIncrementCounterValue(this.props.count);
-  }
 
   render() {
+    const { increment, decrement, counter } = this.props;
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-          Guests
+          Guests: {counter}
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
-          <p>Guests</p>
-          <button className="btn" onClick={this.onDecrementCounter}>-</button>
-          <button className="btn" onClick={this.onIncrementCounter}>+</button>
+          <p>
+            Guests: {counter}
+            {' '}
+            <button onClick={increment}>+</button>
+            {' '}
+            <button onClick={decrement}>-</button>
+          </p>
         </div>
       </div>
     );

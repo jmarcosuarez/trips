@@ -1,6 +1,6 @@
 .search {
-  border-top: 1px solid #282f44;
-  border-bottom: 1px solid #282f44;
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
 }
 
 .search ul {
@@ -13,8 +13,8 @@
 
 }
 
-.search ul > li { display: inline; border-left: 1px solid #282f44; padding-left: 0.3em; }
-.search ul > li:last-child { display: inline; border-right: 1px solid #282f44; padding-left: 0.3em; }
+.search ul > li { display: inline; border-left: 1px solid #ececec; padding-left: 0.3em; }
+.search ul > li:last-child { display: inline; border-right: 1px solid #ececec; padding-left: 0.3em; }
 
 .search ul > li {
   flex: 0 1 auto;

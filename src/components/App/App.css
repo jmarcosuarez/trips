@@ -37,5 +37,6 @@ main {
 footer {
   flex: 0 0 90px; /* don’t grow or shrink - just stay at a height of 90px. */ 
   padding: 10px;
-  border-top: 1px solid #282f44;
+  border-top: 1px solid #ececec;
+  /*background-color: #282f44;*/
 }
