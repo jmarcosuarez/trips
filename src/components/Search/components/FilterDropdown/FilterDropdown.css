@@ -1,10 +1,14 @@
 .dropdown {
+  
+}
+
+.dropdown {
   padding: 0;
   margin: 0;
 }
 
-.dropdown p {
-  color: #000;
+.dropdown {
+  position: relative;
 }
 
 .dropdown button {
@@ -20,16 +24,19 @@
 }
 
 .dropdown > div {
+  font-size: 1.25em;
   background-color: #FAFAFA;
   display: none;
   z-index: 1;
   position: absolute;
-  width: 300px;
+  min-width: 250px;
+  padding: 10px;
+  margin: 0;
   list-style: none;
   border: 1px solid #BDBDBD;
-  padding: 40px 10px;
 }
 
-.dropdown .active {
+.dropdown > div.active {
     display: block;
 }
+

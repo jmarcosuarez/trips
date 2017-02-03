@@ -10,15 +10,25 @@
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
+
 }
 
 .search ul > li { display: inline; border-left: 1px solid #282f44; padding-left: 0.3em; }
 .search ul > li:last-child { display: inline; border-right: 1px solid #282f44; padding-left: 0.3em; }
 
+.search ul > li {
+  flex: 0 1 auto;
+  width: 180px;
+} 
+
+.search ul > li:first-child {
+  width: 280px;
+}
+
 .search p {
-  padding: 1.75rem 0.5rem 0.5rem 0.5rem;
-  font-size: 1.8rem;
-  min-width: 200px;
+  padding: 1.60rem 0.5rem 0.5rem 0.5rem;
+  font-size: 1.6rem;
+  min-width: 100px;
   text-decoration: none;
   display: flex;
   align-items: flex-start;
@@ -30,4 +40,11 @@
 
 .search i {
   padding: 0 0.5rem;
+}
+
+.search ul > li button {
+  border: none;
+  height: 50px;
+  margin: 0;
+  background: transparent;
 }
