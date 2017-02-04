@@ -7,13 +7,13 @@ import Extension from './presenter';
 
 function mapStateToProps(state) {
   const data = state.data;
-  const counter = state.counter;
   const filters = state.filters;
   const perfectOption = state.perfectOption;
+  const bedroom = state.bedroom;
 
   return {
     data,
-    counter,
+    bedroom,
     filters,
     perfectOption,
   };
@@ -21,8 +21,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     onClick: bindActionCreators(actions.setOption, dispatch),
-    increment: bindActionCreators(actions.increment, dispatch),
-    decrement: bindActionCreators(actions.decrement, dispatch),
+    incrementBedroom: bindActionCreators(actions.incrementBedroom, dispatch),
+    decrementBedroom: bindActionCreators(actions.decrementBedroom, dispatch),
     setFilters: bindActionCreators(actions.setFilters, dispatch),
     setSelectedOption: bindActionCreators(actions.setSelectedOption, dispatch),
   };

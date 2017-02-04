@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './OptionsBar.css';
-import Counter from '../../components/Counter/Counter';
+import Bedroom from '../../components/Bedroom';
 import Checkbox from '../../components/Checkbox';
 import Title from '../../components/Title';
 
@@ -9,7 +9,7 @@ import { Dropdown } from '../../components/Dropdown';
 
 const EnhancedDropdown = enhancer(Dropdown);
 
-const OptionsBar = ({ perfectOption = [], counter, increment, decrement, setSelectedOption }) =>
+const OptionsBar = ({ perfectOption = [], bedroom, incrementBedroom, decrementBedroom, setSelectedOption }) =>
   <div className={styles.optionsBar}>
     <ul>
       <li>
@@ -19,22 +19,21 @@ const OptionsBar = ({ perfectOption = [], counter, increment, decrement, setSele
       </li>
       <li>
         <EnhancedDropdown
-          // optionSelected={perfectOption.get('optionSelected')}
           onSelect={option => setSelectedOption(option)}
           data={perfectOption}
         />
       </li>
       <li>
-        <Counter
-          counter={counter}
-          decrement={value => decrement(value)}
-          increment={value => increment(value)}
+        <Bedroom
+          bedroom={bedroom}
+          decrementBedroom={value => decrementBedroom(value)}
+          incrementBedroom={value => incrementBedroom(value)}
         />
       </li>
       <li>
         <Checkbox
           label="TestLabel"
-          checked
+          checked={false}
           checkboxChange={() => checkboxChange()}
         />
       </li>

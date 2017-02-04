@@ -14,9 +14,9 @@
   text-align: left;
 }
 
-.filterStrip ul > li:first-child {
+/*.filterStrip ul > li:first-child {
   flex: 0 0 200px;
-}
+}*/
 
 .filterStrip  input[type="checkbox"]:focus{
   outline:0;

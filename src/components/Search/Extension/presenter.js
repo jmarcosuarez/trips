@@ -14,9 +14,9 @@ import styles from './Extension.css';
 const Extension = (
   {
     data = [],
-    counter,
-    increment,
-    decrement,
+    bedroom,
+    incrementBedroom,
+    decrementBedroom,
     onClick,
     filters,
     setFilters,
@@ -31,9 +31,9 @@ const Extension = (
       <OptionsBar
         perfectOption={perfectOption}
         setSelectedOption={option => setSelectedOption(option)}
-        counter={counter}
-        decrement={value => decrement(value)}
-        increment={value => increment(value)}
+        bedroom={bedroom}
+        decrementBedroom={value => decrementBedroom(value)}
+        incrementBedroom={value => incrementBedroom(value)}
       />
 
       <FilterStrip

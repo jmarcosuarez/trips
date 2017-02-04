@@ -6,7 +6,7 @@ const Footer = () =>
     <ul>
       <li>Search Tool Prototyping</li>
       <li>Trips App</li>
-      <li>Code in <a href="https://github.com/jmarcosuarez/trips">Trips</a></li>
+      <li>Code in <a href="https://github.com/jmarcosuarez/trips">github</a></li>
     </ul>
   </footer>;
 

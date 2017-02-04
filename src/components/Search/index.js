@@ -10,12 +10,14 @@ function mapStateToProps(state) {
   const counter = state.counter;
   const dateInput = state.dateInput;
   const rangeInput = state.rangeInput;
+  const bedroom = state.bedroom;
 
   return {
     data,
     counter,
     dateInput,
     rangeInput,
+    bedroom,
   };
 }
 function mapDispatchToProps(dispatch) {
@@ -25,6 +27,7 @@ function mapDispatchToProps(dispatch) {
     decrement: bindActionCreators(actions.decrement, dispatch),
     setDates: bindActionCreators(actions.setDates, dispatch),
     setRange: bindActionCreators(actions.setRange, dispatch),
+    setBedroom: bindActionCreators(actions.setBedroom, dispatch),
 
   };
 }

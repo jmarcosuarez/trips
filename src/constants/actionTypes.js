@@ -7,3 +7,6 @@ export const SET_DATES = 'SET_DATES';
 export const SET_FILTERS = 'SET_FILTERS';
 export const SET_RANGE = 'SET_RANGE';
 export const SET_PERFECT_OPTION = 'SET_PERFECT_OPTION';
+export const SET_BEDROOM = 'SET_BEDROOM';
+export const INCREMENT_BEDROOM = 'INCREMENT_BEDROOM';
+export const DECREMENT_BEDROOM = 'DECREMENT_BEDROOM';
