@@ -13,15 +13,23 @@ import { FilterDropdown } from './components/FilterDropdown/FilterDropdown';
 const EnhancedDropdown = enhancer(FilterDropdown);
 
 class Search extends Component {
-// function Search({ data = [], counter, increment, decrement, onClick }) {
   render() {
-    const { data = [], counter, increment, decrement, onClick } = this.props;
+    const {
+      data = [],
+      counter, increment, decrement, onClick,
+      dateInput, setDates,
+      rangeInput, setRange,
+    } = this.props;
     return (
       <div>
         <div className={styles.search}>
           <ul className="list-inline">
             <li>
-              <DateInput />
+              <DateInput
+                dates={dateInput.dates}
+                disabled={dateInput.disabled}
+                setDates={range => setDates(range)}
+              />
             </li>
             <li>
               <Counter
@@ -31,20 +39,18 @@ class Search extends Component {
               />
             </li>
             <li>
-              <Range />
+              <Range
+                range={rangeInput.range}
+                setRange={range => setRange(range)}
+              />
             </li>
             <li className={styles.modal}>
-              <EnhancedDropdown
-                optionSelected={data.optionSelected}
-                onSelect={option => onClick(option)} // option => this.setState({ optionSelected: option })
-                data={data.data}
-              />
-              { /* <button>
+              <Link to="/extension">
                 <p>
                   <i className="glyphicon glyphicon-filter" /> More Filters
                   <i className="glyphicon glyphicon-menu-down" />
                 </p>
-              </button> */ }
+              </Link>
             </li>
             <li>
               <button>
@@ -56,33 +62,7 @@ class Search extends Component {
               </button>
             </li>
           </ul>
-          { /* <ul className="list-inline">
-            <li>
-              <p><i className="glyphicon glyphicon-calendar" /> When? <i className="glyphicon glyphicon-menu-down" /></p>
-            </li>
-            <li>
-              <p><i className="glyphicon glyphicon-user" /> You+1 <i className="glyphicon glyphicon-menu-down" /></p>
-            </li>
-            <li>
-              <p>Have a budget ? <i className="glyphicon glyphicon-menu-down" /></p>
-            </li>
-            <li>
-              <p>
-                <i className="glyphicon glyphicon-filter" /> More Filters
-                <i className="glyphicon glyphicon-menu-down" />
-              </p>
-            </li>
-            <li>
-              <p><i className={`${styles.different} glyphicon glyphicon-map-marker`} /> MAP VIEW</p>
-            </li>
-          </ul>*/}
         </div>
-
-        {/* <EnhancedDropdown
-            optionSelected={data.optionSelected}
-            onSelect={option => onClick(option)} // option => this.setState({ optionSelected: option })
-            data={data.data}
-          />   */}
 
         <div className={styles.landing}>
 

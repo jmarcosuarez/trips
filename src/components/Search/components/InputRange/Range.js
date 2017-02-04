@@ -10,7 +10,6 @@ export default class Range extends Component {
 
     this.state = {
       isOpen: false,
-      values: { min: 0, max: 500 }, //values that will show initially
     };
     this.handleDocumentClick = this.handleDocumentClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -26,7 +25,9 @@ export default class Range extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   }
   handleChange(values) {
-    this.setState({ values });
+    this.props.setRange(values);
+    // console.log(values);
+    // this.setState({ values });
   }
   handleDocumentClick() {
     if (this.state.isOpen) {
@@ -37,7 +38,7 @@ export default class Range extends Component {
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-         Price Range: {this.state.values.min} - {this.state.values.max}
+         Price: {this.props.range.min} - {this.props.range.max}
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <InputRange
@@ -45,7 +46,7 @@ export default class Range extends Component {
             step={1}
             maxValue={500}
             minValue={0}
-            value={this.state.values}
+            value={this.props.range}
             onChange={this.handleChange}
           />
         </div>

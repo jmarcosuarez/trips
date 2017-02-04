@@ -1,21 +1,21 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import * as actions from '../../../actions';
 
-import Search from './presenter';
+import Extension from './presenter';
 
 function mapStateToProps(state) {
   const data = state.data;
   const counter = state.counter;
-  const dateInput = state.dateInput;
-  const rangeInput = state.rangeInput;
+  const filters = state.filters;
+  const perfectOption = state.perfectOption;
 
   return {
     data,
     counter,
-    dateInput,
-    rangeInput,
+    filters,
+    perfectOption,
   };
 }
 function mapDispatchToProps(dispatch) {
@@ -23,10 +23,9 @@ function mapDispatchToProps(dispatch) {
     onClick: bindActionCreators(actions.setOption, dispatch),
     increment: bindActionCreators(actions.increment, dispatch),
     decrement: bindActionCreators(actions.decrement, dispatch),
-    setDates: bindActionCreators(actions.setDates, dispatch),
-    setRange: bindActionCreators(actions.setRange, dispatch),
-
+    setFilters: bindActionCreators(actions.setFilters, dispatch),
+    setSelectedOption: bindActionCreators(actions.setSelectedOption, dispatch),
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Extension);

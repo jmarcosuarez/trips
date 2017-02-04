@@ -4,7 +4,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
 import Stream from './components/Stream';
 import Search from './components/Search';
-import Extension from './components/Search/Extension/Extension';
+import Extension from './components/Search/Extension';
 import List from './components/Search/components/Extension/List';
 
 export default (

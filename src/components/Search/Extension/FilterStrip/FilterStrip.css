@@ -1,0 +1,23 @@
+.filterStrip {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid  #ececec;
+}
+
+.filterStrip ul {
+  list-style: none;
+  display: flex;
+}
+
+.filterStrip ul > li {
+  flex: 0 0 25%;
+  text-align: left;
+}
+
+.filterStrip ul > li:first-child {
+  flex: 0 0 200px;
+}
+
+.filterStrip  input[type="checkbox"]:focus{
+  outline:0;
+}

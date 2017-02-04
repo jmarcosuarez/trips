@@ -18,11 +18,11 @@
 
 .search ul > li {
   flex: 0 1 auto;
-  width: 180px;
+  width: 160px;
 } 
 
 .search ul > li:first-child {
-  width: 280px;
+  width: 200px;
 }
 
 .search li:hover, .search li:active {

@@ -10,15 +10,15 @@ import styles from './Dropdown.css';
 export const Dropdown = (props) => (
   <div className={styles.dropdown}>
     <button onClick={props.onToggle}>
-      Selected option: {props.data[props.optionSelected]}
+      {props.data.getIn(['options', props.data.get('optionSelected'), 'value'])}
     </button>
     <ul className={props.isOpen ? styles.active : null}>
       {
-        props.data.map((item, i) => {
+        props.data.get('options').map((item, i) => {
           return (
             <li
               key={i}
-              className={i === props.optionSelected ? styles.selected : null}
+              className={i === props.data.get('optionSelected') ? styles.selected : null}
               onClick={() => props.onSelect(i)}
             >
               {item}

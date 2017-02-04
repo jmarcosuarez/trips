@@ -1,0 +1,24 @@
+.optionsBar {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid  #ececec;
+}
+
+.optionsBar ul {
+  list-style: none;
+  display: flex;
+}
+
+.optionsBar ul > li {
+  padding: 0 10px;
+  flex: 0 0 25%;
+  text-align: left;
+}
+
+.optionsBar ul > li:first-child {
+  flex: 0 0 200px;
+}
+
+.optionsBar input[type="checkbox"]:focus{
+  outline:0;
+}
