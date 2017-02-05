@@ -12,10 +12,10 @@ const FilterStrip = ({ title, filters, setFilters }) =>
         />
       </li>
       {
-        filters.map(value =>
+        filters.map((value, key) =>
           <li>
             <Checkbox
-              key={value.get('storeId')}
+              key={key}
               label={value.get('storeId')}
               checked={value.get('initial')}
               checkboxChange={setFilters}

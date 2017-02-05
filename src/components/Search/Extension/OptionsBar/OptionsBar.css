@@ -6,17 +6,26 @@
 
 .optionsBar ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .optionsBar ul > li {
-  padding: 0 10px;
-  flex: 0 0 25%;
+  padding: 0 40px;
+  flex: auto;
   text-align: left;
+}
+.optionsBar input + label {
+  width: 150px;
+
 }
 
 .optionsBar ul > li:first-child {
-  flex: 0 0 200px;
+  padding: 0;
 }
 
 .optionsBar input[type="checkbox"]:focus{

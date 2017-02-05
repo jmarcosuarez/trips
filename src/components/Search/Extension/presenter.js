@@ -13,7 +13,6 @@ import styles from './Extension.css';
 
 const Extension = (
   {
-    data = [],
     bedroom,
     incrementBedroom,
     decrementBedroom,

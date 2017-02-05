@@ -6,16 +6,22 @@
 
 .noticeBar ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .noticeBar ul > li {
-  flex: 0 0 25%;
+  flex: 1;
   font-size: 1.50em;
   text-align: left;
   font-variant-caps: all-petite-caps;
+  margin: 0 10px;
 }
 
 .noticeBar ul > li:first-child {
-  flex: 2;
+  flex: 3;
 }

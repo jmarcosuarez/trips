@@ -7,16 +7,15 @@ import Counter from './components/Counter/Counter';
 import Range from './components/InputRange/Range';
 import DateInput from './components/DateInput/DateInput';
 
-import { EnhanceDropdown as enhancer } from './components/FilterDropdown/EnhanceDropdown';
-import { FilterDropdown } from './components/FilterDropdown/FilterDropdown';
+// import { EnhanceDropdown as enhancer } from './components/FilterDropdown/EnhanceDropdown';
+// import { FilterDropdown } from './components/FilterDropdown/FilterDropdown';
 
-const EnhancedDropdown = enhancer(FilterDropdown);
+// const EnhancedDropdown = enhancer(FilterDropdown);
 
 class Search extends Component {
   render() {
     const {
-      data = [],
-      counter, increment, decrement, onClick,
+      counter, increment, decrement,
       dateInput, setDates,
       rangeInput, setRange,
     } = this.props;
