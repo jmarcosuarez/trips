@@ -9,7 +9,7 @@
 .filterStrip ul {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
@@ -18,11 +18,8 @@
 }
 
 .filterStrip ul > li {
-  flex: auto;
-  width: 150px;
-  padding: 5px;
-  margin: 5px 0;
-
+  flex: 0 0 250px;
+  margin: 5px;
 }
 
 .filterStrip  input[type="checkbox"]:focus{
