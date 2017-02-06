@@ -39,9 +39,9 @@ export default class Counter extends Component {
           <p>
             Guests: {counter}
             {' '}
-            <button onClick={increment}>+</button>
+            <button className="btn btn-default" onClick={decrement}>-</button>
             {' '}
-            <button onClick={decrement}>-</button>
+            <button className="btn btn-default" onClick={increment}>+</button>
           </p>
         </div>
       </div>

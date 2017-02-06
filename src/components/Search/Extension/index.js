@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch) {
   return {
     incrementBedroom: bindActionCreators(actions.incrementBedroom, dispatch),
     decrementBedroom: bindActionCreators(actions.decrementBedroom, dispatch),
-    setFilters: bindActionCreators(actions.setFilters, dispatch),
+    setCheckbox: bindActionCreators(actions.setCheckbox, dispatch),
     setSelectedOption: bindActionCreators(actions.setSelectedOption, dispatch),
     onFilterSend: bindActionCreators(actions.onFilterSend, dispatch),
     onFilterCancel: bindActionCreators(actions.onFilterCancel, dispatch),

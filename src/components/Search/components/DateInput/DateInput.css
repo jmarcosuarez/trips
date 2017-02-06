@@ -39,3 +39,12 @@
 .dropdown .active {
     display: block;
 }
+/*
+input {
+    opacity: 1; // Restore the opacity
+    border: 0; // Remove the border 
+    background: transparent;  //Remove the background 
+    cursor: default !important; // Restore cursor to default 
+    pointer-events: none; // Remove pointer events to be safe? 
+}
+*/

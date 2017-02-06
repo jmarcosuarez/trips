@@ -8,7 +8,7 @@ export default class Checkbox extends Component {
   }
 
   toggleCheckbox() {
-    this.props.checkboxChange(this.props.label);
+    this.props.checkboxChange(this.props.label, this.props.group);
   }
 
   render() {

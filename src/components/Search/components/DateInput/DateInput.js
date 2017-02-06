@@ -57,7 +57,7 @@ class DateInput extends Component {
               // disable: [{ from: '2017-02-16', to: '2017-02-19' }, '2017-02-24'],
             }}
           />
-          <button onClick={this.onClose}>
+          <button className="btn btn-default" onClick={this.onClose}>
             Close
           </button>
         </div>

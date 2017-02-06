@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
 // import * as actions from './components/Stream/StreamActions';
 import routes from './routes';
+import DevTools from './stores/DevTools';
 
 // const tracks = [
 //   {
@@ -23,7 +24,10 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <div>
+      <Router history={history} routes={routes} />
+      <DevTools />
+    </div>
   </Provider>,
   document.getElementById('app')
 );

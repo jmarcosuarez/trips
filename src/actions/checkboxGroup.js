@@ -1,9 +1,9 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function setFilters(filters, group) {
+export function setCheckbox(checkboxName, checkboxGroupName) {
   return {
-    type: actionTypes.SET_FILTERS,
-    filters,
-    group,
+    type: actionTypes.SET_CHECKBOX,
+    checkboxName,
+    checkboxGroupName,
   };
 }

@@ -23,33 +23,34 @@ const initialState = fromJS(
 
 export default function (state = initialState, action) {
   switch (action.type) {
-    case actionTypes.SET_FILTERS:
-      return setFilters(state, action);
+    case actionTypes.SET_CHECKBOX:
+      return setCheckbox(state, action);
     case actionTypes.GET_SELECTED_CHECKBOXES:
       return getCheckboxesSelected(state, action);
   }
   return state;
 }
 
-function setFilters(state, action) {
-  const { filters } = action;
-  // console.log(filters);
-  // const culo = state.filter(value => value === filters);
-  // console.log(culo, 'del mio culo');
-  // book = book.update('genres', genres => genres.push('Wizards'));
-  return state;
+function setCheckbox(state, action) {
+  const { checkboxName, checkboxGroupName } = action;
+  /* This needs to be on the action, not here! */
+  const indexOfListingToUpdate = state.get(checkboxGroupName).findIndex(listing => {
+    return listing.get('storeId') === checkboxName;
+  });
+  const value = state.getIn([checkboxGroupName, indexOfListingToUpdate, 'initial']);
+  return state.setIn([checkboxGroupName, indexOfListingToUpdate, 'initial'], !value);
 }
 
 function getCheckboxesSelected(state, action) {
-  const { filters } = action;
+  const { checkboxName } = action;
   // console.log(action);
   return state;
 }
 
-//  Selectors
-export function getSelected(state) {
-  // console.log(state.checkboxGroup);
-  const selected = state.checkboxGroup.filter((value) => value.initial === true);
-  // console.log(selected);
-  return selected;
-}
+// //  Selectors
+// export function getSelected(state) {
+//   // console.log(state.checkboxGroup);
+//   const selected = state.checkboxGroup.filter((value) => value.initial === true);
+//   // console.log(selected);
+//   return selected;
+// }

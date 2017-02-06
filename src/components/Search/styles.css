@@ -1,6 +1,7 @@
 .search {
   border-top: 1px solid #ececec;
   border-bottom: 1px solid #ececec;
+  width: 100%;
 }
 
 .search ul {
@@ -17,6 +18,7 @@
 .search ul > li:last-child { display: inline; border-right: 1px solid #ececec; padding-left: 0.3em; }
 
 .search ul > li {
+  display: inline-block;
   flex: 0 1 auto;
   width: 160px;
   align-self: stretch;

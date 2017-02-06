@@ -23,13 +23,4 @@ function setDates(state, action) {
     start: dates[0],
     end: dates[1],
   });
-
-  // if (dates[1]) {
-  //   return state.set('end', dates[1]);
-  // } else {
-  //   return state.set('start', dates[0]);
-  // }
-  // const mdate = moment(dates[1]);
-  // console.log(mdate, 'thisi is reducer');
-  // return state.set('dates', mdate);
 }

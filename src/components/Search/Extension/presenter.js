@@ -16,7 +16,7 @@ const Extension = (
     incrementBedroom,
     decrementBedroom,
     checkboxGroup,
-    setFilters,
+    setCheckbox,
     perfectOption,
     setSelectedOption,
     onFilterSend,
@@ -41,19 +41,19 @@ const Extension = (
       <CheckboxGroup
         title="neighborhoods"
         checkboxGroup={checkboxGroup.get('neighborhoods')}
-        setFilters={filter => setFilters(filter)}
+        setCheckbox={(checkboxName, checkboxGroupName) => setCheckbox(checkboxName, checkboxGroupName)}
       />
 
       <CheckboxGroup
         title="amenities"
         checkboxGroup={checkboxGroup.get('amenities')}
-        setFilters={filter => setFilters(filter)}
+        setCheckbox={(checkboxName, checkboxGroupName) => setCheckbox(checkboxName, checkboxGroupName)}
       />
 
       <CheckboxGroup
-        title="property type"
+        title="propertyType"
         checkboxGroup={checkboxGroup.get('propertyType')}
-        setFilters={filter => setFilters(filter)}
+        setCheckbox={(checkboxName, checkboxGroupName) => setCheckbox(checkboxName, checkboxGroupName)}
       />
 
       {/* <EnhancedDropdown
@@ -68,7 +68,7 @@ NoticeBar.propTypes = {
   incrementBedroom: PropTypes.func,
   decrementBedroom: PropTypes.func,
   checkboxGroup: PropTypes.string,
-  setFilters: PropTypes.func,
+  setCheckbox: PropTypes.func,
   perfectOption: PropTypes.string,
   setSelectedOption: PropTypes.func,
   onFilterSend: PropTypes.func,

@@ -3,7 +3,7 @@ import Title from '../../components/Title';
 import Checkbox from '../../components/Checkbox';
 import styles from './CheckboxGroup.css';
 
-const CheckboxGroup = ({ title, checkboxGroup, setFilters }) =>
+const CheckboxGroup = ({ title, checkboxGroup, setCheckbox }) =>
   <div className={styles.checkboxGroup}>
     <ul>
       <li>
@@ -17,8 +17,9 @@ const CheckboxGroup = ({ title, checkboxGroup, setFilters }) =>
             <Checkbox
               key={value.get('storeId')}
               label={value.get('storeId')}
+              group={title}
               checked={value.get('initial')}
-              checkboxChange={setFilters}
+              checkboxChange={setCheckbox}
             />
           </li>
         )

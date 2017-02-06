@@ -28,6 +28,7 @@
   "arrow-parens": 0,
   "jsx-a11y/no-static-element-interactions": 0,
   "new-cap": 0,
+  "import/no-extraneous-dependencies": 0,
 
   }
 }
