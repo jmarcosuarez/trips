@@ -5,7 +5,7 @@ import App from './components/App';
 import Stream from './components/Stream';
 import Search from './components/Search';
 import Extension from './components/Search/Extension';
-import List from './components/Search/components/Extension/List';
+import List from './components/Search/List';
 
 export default (
   <Route path="/" component={App}>

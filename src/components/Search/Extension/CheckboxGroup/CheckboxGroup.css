@@ -1,12 +1,12 @@
 
 
-.filterStrip {
+.checkboxGroup {
   padding: 20px;
   margin: 20px;
   border: 1px solid  #ececec;
 }
 
-.filterStrip ul {
+.checkboxGroup ul {
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -17,16 +17,16 @@
   margin: 0;
 }
 
-.filterStrip ul > li {
+.checkboxGroup ul > li {
   flex: 0 0 250px;
   margin: 5px;
 }
 
-.filterStrip  input[type="checkbox"]:focus{
+.checkboxGroup  input[type="checkbox"]:focus{
   outline:0;
 }
 
-.filterStrip > ul > li:last-child {
+.checkboxGroup > ul > li:last-child {
   position: absolute;
   right: 0;
   width: 20px;

@@ -27,11 +27,6 @@ class DateInput extends Component {
   onClose() {
     this.onToggle();
   }
-  setDateRange(dates, datestr, instance) {
-    // if (this.props.setDates) { this.props.setDates }
-    console.info(dates[0]);
-    console.info(dates[1]);
-  }
   //  Right now document click is disabled because it doesn't let choose range of dates
   //  Meaning after first click it closes and we will need two clicks before it closes.
   handleDocumentClick() {
@@ -40,17 +35,16 @@ class DateInput extends Component {
     }
   }
   render() {
-    const { dates, disabled } = this.props;
+    const { dates, setDates } = this.props;
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-         TogglePickr
+         From: - To:
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <Flatpickr
-            placeholder={'From -> To'}
-            onChange={this.setDateRange}
-            // onChange={setDates}
+            // placeholder={'From -> To'}
+            onChange={setDates}
             options={{
               mode: 'range',
               inline: true,
@@ -59,7 +53,7 @@ class DateInput extends Component {
               altInput: true,
               altFormat: 'm/j/Y',
               // Disable a date interval, or a specific date.
-              disable: { disabled },
+              // disable: [{ from: '2017-02-16', to: '2017-02-19' }, '2017-02-24'],
             }}
           />
           <button onClick={this.onClose}>

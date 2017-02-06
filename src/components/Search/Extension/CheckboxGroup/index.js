@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import Title from '../../components/Title';
 import Checkbox from '../../components/Checkbox';
-import styles from './FilterStrip.css';
+import styles from './CheckboxGroup.css';
 
-const FilterStrip = ({ title, filters, setFilters }) =>
-  <div className={styles.filterStrip}>
+const CheckboxGroup = ({ title, checkboxGroup, setFilters }) =>
+  <div className={styles.checkboxGroup}>
     <ul>
       <li>
         <Title
@@ -12,10 +12,10 @@ const FilterStrip = ({ title, filters, setFilters }) =>
         />
       </li>
       {
-        filters.map((value, key) =>
+        checkboxGroup.map((value) =>
           <li>
             <Checkbox
-              key={key}
+              key={value.get('storeId')}
               label={value.get('storeId')}
               checked={value.get('initial')}
               checkboxChange={setFilters}
@@ -29,4 +29,4 @@ const FilterStrip = ({ title, filters, setFilters }) =>
     </ul>
   </div>;
 
-export default FilterStrip;
+export default CheckboxGroup;

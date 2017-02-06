@@ -6,13 +6,13 @@ import * as actions from '../../../actions';
 import Extension from './presenter';
 
 function mapStateToProps(state) {
-  const filters = state.filters;
+  const checkboxGroup = state.checkboxGroup;
   const perfectOption = state.perfectOption;
   const bedroom = state.bedroom;
 
   return {
     bedroom,
-    filters,
+    checkboxGroup,
     perfectOption,
   };
 }
@@ -22,6 +22,8 @@ function mapDispatchToProps(dispatch) {
     decrementBedroom: bindActionCreators(actions.decrementBedroom, dispatch),
     setFilters: bindActionCreators(actions.setFilters, dispatch),
     setSelectedOption: bindActionCreators(actions.setSelectedOption, dispatch),
+    onFilterSend: bindActionCreators(actions.onFilterSend, dispatch),
+    onFilterCancel: bindActionCreators(actions.onFilterCancel, dispatch),
   };
 }
 

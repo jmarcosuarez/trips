@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
+import Button from '../../components/Button';
+
 import styles from './NoticeBar.css';
 
-const NoticeBar = () =>
+const NoticeBar = ({ onFilterSend, onFilterCancel }) =>
   <div className={styles.noticeBar}>
     <ul>
       <li>Notice Bar</li>
-      <li><a href="/search">Cancel</a></li>
-      <li><button>See Homes</button></li>
+      <li>
+        <Link onClick={() => onFilterCancel()} to="/list">
+          Cancel
+        </Link>
+      </li>
+      <li>
+        <Link onClick={() => onFilterSend()}>
+          <Button
+            placeholder="See Homes"
+          />
+        </Link>
+      </li>
     </ul>
   </div>;
+
+NoticeBar.propTypes = {
+  onFilterSend: PropTypes.func.isRequired,
+  onFilterCancel: PropTypes.func.isRequired,
+};
 
 export default NoticeBar;

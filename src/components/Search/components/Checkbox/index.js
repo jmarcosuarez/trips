@@ -30,7 +30,7 @@ export default class Checkbox extends Component {
         />
         <label
           htmlFor={label}
-          ref="text"
+          ref={(c) => { this.label = c; }}
         >{label}
         </label>
       </div>

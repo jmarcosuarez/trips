@@ -1,9 +1,11 @@
+import { fromJS } from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
 
-const initialState = {
-  disabled: [{ from: '2017-02-16', to: '2017-02-19' }, '2017-02-24'], // flatpickr gets disabled dates through here
-  dates: [],
-};
+const initialState = fromJS(
+  {
+    dates: [],
+  }
+);
 
 export default function (state = initialState, action) {
   switch (action.type) {
@@ -15,5 +17,13 @@ export default function (state = initialState, action) {
 
 function setDates(state, action) {
   const { dates } = action;
-  return [...state, ...dates];
+  // console.log(state);
+  // console.log(action);
+  // return [...state, ...dates];
+  // return {
+  //   ...state,
+  //   dates: [...dates],
+  // };
+  // console.log(dates[0], 'from reducers');
+  return state.set('dates', dates);
 }

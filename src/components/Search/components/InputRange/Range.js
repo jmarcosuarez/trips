@@ -26,8 +26,6 @@ export default class Range extends Component {
   }
   handleChange(values) {
     this.props.setRange(values);
-    // console.log(values);
-    // this.setState({ values });
   }
   handleDocumentClick() {
     if (this.state.isOpen) {

@@ -19,6 +19,7 @@
 .search ul > li {
   flex: 0 1 auto;
   width: 160px;
+  align-self: stretch;
 } 
 
 .search ul > li:first-child {
@@ -30,20 +31,21 @@
 }
 
 .search p {
-  padding: 1.60rem 0.5rem 0.5rem 0.5rem;
+  margin: 0;
   font-size: 1.6rem;
   min-width: 100px;
+  height: 100%;
   text-decoration: none;
   display: flex;
-  align-items: flex-start;
-}
-
-.search p > i:last-of-type:not(.different) {
-  margin-left: auto;
+  align-items: center;
 }
 
 .search i {
   padding: 0 0.5rem;
+}
+
+.search li:last-child {
+  
 }
 
 .search ul > li button {

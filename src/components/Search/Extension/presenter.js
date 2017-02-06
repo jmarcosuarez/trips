@@ -1,6 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router';
-import FilterStrip from './FilterStrip';
+import React, { PropTypes } from 'react';
+import CheckboxGroup from './CheckboxGroup';
 import NoticeBar from './NoticeBar';
 import OptionsBar from './OptionsBar';
 
@@ -16,16 +15,20 @@ const Extension = (
     bedroom,
     incrementBedroom,
     decrementBedroom,
-    onClick,
-    filters,
+    checkboxGroup,
     setFilters,
     perfectOption,
     setSelectedOption,
+    onFilterSend,
+    onFilterCancel,
   }) =>
 
     <div className={styles.extension}>
 
-      <NoticeBar />
+      <NoticeBar
+        onFilterSend={() => onFilterSend()}
+        onFilterCancel={() => onFilterCancel()}
+      />
 
       <OptionsBar
         perfectOption={perfectOption}
@@ -35,21 +38,21 @@ const Extension = (
         incrementBedroom={value => incrementBedroom(value)}
       />
 
-      <FilterStrip
+      <CheckboxGroup
         title="neighborhoods"
-        filters={filters.get('neighborhoods')}
+        checkboxGroup={checkboxGroup.get('neighborhoods')}
         setFilters={filter => setFilters(filter)}
       />
 
-      <FilterStrip
+      <CheckboxGroup
         title="amenities"
-        filters={filters.get('amenities')}
+        checkboxGroup={checkboxGroup.get('amenities')}
         setFilters={filter => setFilters(filter)}
       />
 
-      <FilterStrip
+      <CheckboxGroup
         title="property type"
-        filters={filters.get('propertyType')}
+        checkboxGroup={checkboxGroup.get('propertyType')}
         setFilters={filter => setFilters(filter)}
       />
 
@@ -59,5 +62,17 @@ const Extension = (
               data={data.data}
             />   */}
     </div>;
+
+NoticeBar.propTypes = {
+  bedroom: PropTypes.number,
+  incrementBedroom: PropTypes.func,
+  decrementBedroom: PropTypes.func,
+  checkboxGroup: PropTypes.string,
+  setFilters: PropTypes.func,
+  perfectOption: PropTypes.string,
+  setSelectedOption: PropTypes.func,
+  onFilterSend: PropTypes.func,
+  onFilterCancel: PropTypes.func,
+};
 
 export default Extension;

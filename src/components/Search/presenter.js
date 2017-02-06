@@ -1,16 +1,11 @@
 /* eslint react/prefer-stateless-function: 0 */
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import styles from './styles.css';
 import Counter from './components/Counter/Counter';
 import Range from './components/InputRange/Range';
 import DateInput from './components/DateInput/DateInput';
-
-// import { EnhanceDropdown as enhancer } from './components/FilterDropdown/EnhanceDropdown';
-// import { FilterDropdown } from './components/FilterDropdown/FilterDropdown';
-
-// const EnhancedDropdown = enhancer(FilterDropdown);
 
 class Search extends Component {
   render() {
@@ -25,8 +20,7 @@ class Search extends Component {
           <ul className="list-inline">
             <li>
               <DateInput
-                dates={dateInput.dates}
-                disabled={dateInput.disabled}
+                dates={dateInput}
                 setDates={range => setDates(range)}
               />
             </li>
@@ -39,11 +33,11 @@ class Search extends Component {
             </li>
             <li>
               <Range
-                range={rangeInput.range}
+                range={rangeInput.get('range')}
                 setRange={range => setRange(range)}
               />
             </li>
-            <li className={styles.modal}>
+            <li>
               <Link to="/extension">
                 <p>
                   <i className="glyphicon glyphicon-filter" /> More Filters
@@ -52,13 +46,11 @@ class Search extends Component {
               </Link>
             </li>
             <li>
-              <button>
+              <Link to="/list">
                 <p>
-                  <Link to="/extension">
-                    <i className={`${styles.different} glyphicon glyphicon-map-marker`} /> MAP VIEW
-                  </Link>
+                  <i className="glyphicon glyphicon-map-marker" /> MAP VIEW
                 </p>
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
@@ -73,5 +65,15 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  counter: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+  // dateInput: PropTypes.object,
+  setDates: PropTypes.func.isRequired,
+  // rangeInput: PropTypes.object,
+  setRange: PropTypes.func.isRequired,
+};
 
 export default Search;
