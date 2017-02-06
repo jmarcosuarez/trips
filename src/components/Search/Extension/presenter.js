@@ -21,6 +21,8 @@ const Extension = (
     setSelectedOption,
     onFilterSend,
     onFilterCancel,
+    instantBookCheckbox,
+    onInstantBookToggle,
   }) =>
 
     <div className={styles.extension}>
@@ -36,6 +38,8 @@ const Extension = (
         bedroom={bedroom}
         decrementBedroom={value => decrementBedroom(value)}
         incrementBedroom={value => incrementBedroom(value)}
+        instantBookCheckbox={instantBookCheckbox}
+        onInstantBookToggle={value => onInstantBookToggle(value)}
       />
 
       <CheckboxGroup
@@ -73,6 +77,8 @@ NoticeBar.propTypes = {
   setSelectedOption: PropTypes.func,
   onFilterSend: PropTypes.func,
   onFilterCancel: PropTypes.func,
+  instantBookCheckbox: PropTypes.bool,
+  onInstantBookToggle: PropTypes.func,
 };
 
 export default Extension;

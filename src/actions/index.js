@@ -5,6 +5,7 @@ import { setRange } from './rangeInput';
 import { setSelectedOption } from './perfectOption';
 import { setBedroom, incrementBedroom, decrementBedroom } from './bedroom';
 import { onFilterSend, onFilterCancel } from './filter';
+import { onInstantBookToggle } from './instantBook';
 
 export {
   setCounter, increment, decrement,
@@ -14,4 +15,5 @@ export {
   setSelectedOption,
   setBedroom, incrementBedroom, decrementBedroom,
   onFilterSend, onFilterCancel,
+  onInstantBookToggle,
 };

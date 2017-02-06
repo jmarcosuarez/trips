@@ -8,6 +8,7 @@ import rangeInput from './rangeInput';
 import perfectOption from './perfectOption';
 import bedroom from './bedroom';
 import filter from './filter';
+import instantBookCheckbox from './instantBookCheckbox';
 
 export default combineReducers({
   counter,
@@ -17,5 +18,6 @@ export default combineReducers({
   perfectOption,
   bedroom,
   filter,
+  instantBookCheckbox,
   routing: routerReducer,
 });

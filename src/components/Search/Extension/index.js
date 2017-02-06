@@ -9,11 +9,13 @@ function mapStateToProps(state) {
   const checkboxGroup = state.checkboxGroup;
   const perfectOption = state.perfectOption;
   const bedroom = state.bedroom;
+  const instantBookCheckbox = state.instantBookCheckbox;
 
   return {
     bedroom,
     checkboxGroup,
     perfectOption,
+    instantBookCheckbox,
   };
 }
 function mapDispatchToProps(dispatch) {
@@ -24,6 +26,7 @@ function mapDispatchToProps(dispatch) {
     setSelectedOption: bindActionCreators(actions.setSelectedOption, dispatch),
     onFilterSend: bindActionCreators(actions.onFilterSend, dispatch),
     onFilterCancel: bindActionCreators(actions.onFilterCancel, dispatch),
+    onInstantBookToggle: bindActionCreators(actions.onInstantBookToggle, dispatch),
   };
 }
 

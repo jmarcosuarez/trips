@@ -10,7 +10,7 @@ import { Dropdown } from '../../components/Dropdown';
 const EnhancedDropdown = enhancer(Dropdown);
 
 const OptionsBar = ({ perfectOption = [], bedroom, incrementBedroom, decrementBedroom,
-  setSelectedOption }) =>
+  setSelectedOption, instantBookCheckbox, onInstantBookToggle }) =>
     <div className={styles.optionsBar}>
       <ul>
         <li>
@@ -33,8 +33,8 @@ const OptionsBar = ({ perfectOption = [], bedroom, incrementBedroom, decrementBe
         </li>
         <li>
           <Checkbox
-            label={perfectOption.getIn(['instantBook', 'storeId'])}
-            checked={perfectOption.getIn(['instantBook', 'initial'])}
+            label={instantBookCheckbox.getIn(['instantBook', 'storeId'])}
+            checked={instantBookCheckbox.getIn(['instantBook', 'initial'])}
             checkboxChange={option => onInstantBookToggle(option)}
           />
         </li>

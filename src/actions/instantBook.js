@@ -1,8 +1,8 @@
 import * as actionTypes from '../constants/actionTypes';
 
-export function setSelectedOption(option) {
+export function onInstantBookToggle(option) {
   return {
-    type: actionTypes.SET_PERFECT_OPTION,
+    type: actionTypes.SET_INSTANT_BOOK,
     option,
   };
 }
