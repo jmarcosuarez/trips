@@ -4,16 +4,10 @@ import styles from './Checkbox.css';
 export default class Checkbox extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      isChecked: props.checked,
-    };
-
     this.toggleCheckbox = this.toggleCheckbox.bind(this);
   }
 
   toggleCheckbox() {
-    this.setState({ isChecked: !this.state.isChecked });
     this.props.checkboxChange(this.props.label);
   }
 
@@ -24,8 +18,8 @@ export default class Checkbox extends Component {
         <input
           id={label}
           type="checkbox"
-          value=""
-          checked={this.state.isChecked}
+          // value=""
+          checked={this.props.checked}
           onChange={this.toggleCheckbox}
         />
         <label

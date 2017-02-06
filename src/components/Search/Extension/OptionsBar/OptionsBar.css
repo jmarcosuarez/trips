@@ -28,6 +28,12 @@
   padding: 0;
 }
 
+.optionsBar ul > li:last-child {
+  padding: 5px;
+  margin: 10px;
+}
+
 .optionsBar input[type="checkbox"]:focus{
   outline:0;
 }
+

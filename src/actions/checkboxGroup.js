@@ -7,9 +7,3 @@ export function setFilters(filters, group) {
     group,
   };
 }
-
-export function getCheckboxesSelected() {
-  return {
-    type: actionTypes.GET_SELECTED_CHECKBOXES,
-  };
-}

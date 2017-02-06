@@ -13,6 +13,10 @@ const initialState = fromJS(
       { value: 'Family holiday (everyone aged 15+)' },
     ],
     optionSelected: 0,
+    instantBook: {
+      storeId: 'Instant Book',
+      initial: false,
+    },
   }
 );
 

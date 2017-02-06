@@ -1,6 +1,7 @@
 /* eslint import/no-extraneous-dependencies: 0 */
 import React, { Component } from 'react';
 import Flatpickr from 'react-flatpickr';
+import moment from 'moment';
 import 'flatpickr/dist/themes/airbnb.css';
 import styles from './DateInput.css';
 
@@ -39,7 +40,7 @@ class DateInput extends Component {
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-         From: - To:
+         From: {moment(dates.get('start')).format('MM/DD/YYYY')} - To: {moment(dates.get('end')).format('MM/DD/YYYY')}
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <Flatpickr

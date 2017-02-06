@@ -6,3 +6,12 @@ export function setSelectedOption(option) {
     option,
   };
 }
+
+export function onInstantBookToggle(option) {
+  console.log('onInstantBookToggle');
+  return {
+    type: actionTypes.TOGGLE_INSTANT_BOOK,
+    option,
+  };
+}
+
