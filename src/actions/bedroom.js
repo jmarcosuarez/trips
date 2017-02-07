@@ -8,18 +8,27 @@ export function setBedroom(bedroom) {
   };
 }
 
+/**
+  * Helper fucntion:
+  * For saving filtering data we need the key of this specific item on the filters store
+  * also we need the new value to be saved
+  */
+const prepareAndSendToFilter = () => (dispatch, getState) => {
+  const key = getState().filter.get('filters').findIndex(listing => {
+    return listing.get('id') === 'Bedrooms';
+  });
+  const value = getState().bedroom;
+  dispatch(setFilterObject(key, value));
+};
+
 export const incrementBedroom = () => (dispatch) => {
   dispatch(increment());
-  // Now, save it to the filter object
-  const optionSelected = 'bedroom';
-  dispatch(setFilterObject(optionSelected));
+  dispatch(prepareAndSendToFilter());
 };
 
 export const decrementBedroom = () => (dispatch) => {
   dispatch(decrement());
-  // Now, save it to the filter object
-  const optionSelected = 'bedroom';
-  dispatch(setFilterObject(optionSelected));
+  dispatch(prepareAndSendToFilter());
 };
 
 function increment() {

@@ -3,7 +3,7 @@ import * as actionTypes from '../constants/actionTypes';
 
 const initialState = fromJS(
   {
-    neighborhoods: [
+    neighbourhoods: [
       { storeId: 'Balham', initial: false },
       { storeId: 'Battersea', initial: false },
       { storeId: 'Bayswater', initial: false },

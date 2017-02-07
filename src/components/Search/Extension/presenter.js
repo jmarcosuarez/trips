@@ -43,8 +43,8 @@ const Extension = (
       />
 
       <CheckboxGroup
-        title="neighborhoods"
-        checkboxGroup={checkboxGroup.get('neighborhoods')}
+        title="neighbourhoods"
+        checkboxGroup={checkboxGroup.get('neighbourhoods')}
         onSetCheckboxGroupItem={
           (checkboxName, checkboxGroupName) => onSetCheckboxGroupItem(checkboxName, checkboxGroupName)
         }

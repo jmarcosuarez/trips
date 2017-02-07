@@ -16,7 +16,7 @@ const initialState = fromJS(
       { id: 'IsInstantBook', value: false },
       { id: 'Neighbourhoods', value: [] },
       { id: 'Amenities', value: [] },
-      { id: 'PropertyTypes', value: [] },
+      { id: 'PropertyType', value: [] },
     ],
   }
 );
@@ -48,7 +48,7 @@ function onFilterCancel(state) {
  */
 function addFilter(state, action) {
   const { key, value } = action;
-  // This works for now, but it would be better to find() the entry and set its value?
+  // This works for now, but it would not be better to find() the entry and set its value?
   return state.setIn(['filters', key, 'value'], value);
   // return state;
 }
