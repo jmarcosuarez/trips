@@ -8,10 +8,17 @@ function selectOption(option) {
   };
 }
 
+/**
+ * Called from the selection of an "Occasion" (The "Perfect for..." dropdown)
+ * @Option=Number
+ */
 export const setPerfectOption = (option) => (dispatch, getState) => {
   dispatch(selectOption(option));
-  // const optionSelected = getState().perfectOption.getIn(['options', option, 'value']);
-  const optionSelected = `Occasion=${option}`;
-  dispatch(setFilterObject(optionSelected));
-  // dispatch(resetToggle(toggleTypes.PLAYLIST));
+  // To save this filter we need its position in the filter object to save the new value
+  const key = getState().filter.get('filters').findIndex(listing => {
+    return listing.get('id') === 'Occasion';
+  });
+  const value = option;
+  // Dispatch it to the filter action
+  dispatch(setFilterObject(key, value));
 };

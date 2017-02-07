@@ -1,20 +1,43 @@
 import * as actionTypes from '../constants/actionTypes';
 
+/**
+ * Called when user clicks cancel on the extended component
+ */
 export function onFilterCancel() {
   return {
     type: actionTypes.ON_FILTER_CANCEL,
   };
 }
 
+/**
+ * Called when user clicks SEND on the extended component
+ */
 export function onFilterSend() {
   return {
     type: actionTypes.ON_FILTER_SEND,
   };
 }
 
-export const setFilterObject = (optionSelected) => (dispatch, getState) => {
-  console.log(optionSelected, 'setFilterObject');
-  // Now, save it to the filter object
+/**
+ * Called when any item is toggle/selected on the filter extension component
+ */
+export function addFilter(key, value) {
+  return {
+    type: actionTypes.ON_FILTER_SAVE,
+    key,
+    value,
+  };
+}
+
+/**
+ * Entry point for all seleccions/toggle on the filter extension component
+ * @Key= Key of the entry on filter state
+ * @value = Value passed for saving
+ */
+export const setFilterObject = (key, value) => (dispatch, getState) => {
+  // 1. Prepate the filter entry
+  // 2. Send it to the reducer for saving. (this will refresh the Notification Bar!)
+  dispatch(addFilter(key, value));
 };
 
 /**
