@@ -13,12 +13,12 @@ import styles from './Extension.css';
 const Extension = (
   {
     bedroom,
-    incrementBedroom,
-    decrementBedroom,
+    onIncrementBedroom,
+    onDecrementBedroom,
     checkboxGroup,
-    setCheckbox,
+    onSetCheckboxGroupItem,
     perfectOption,
-    setSelectedOption,
+    onSetPerfectOption,
     onFilterSend,
     onFilterCancel,
     instantBookCheckbox,
@@ -34,10 +34,10 @@ const Extension = (
 
       <OptionsBar
         perfectOption={perfectOption}
-        setSelectedOption={option => setSelectedOption(option)}
+        onSetPerfectOption={option => onSetPerfectOption(option)}
         bedroom={bedroom}
-        decrementBedroom={value => decrementBedroom(value)}
-        incrementBedroom={value => incrementBedroom(value)}
+        onDecrementBedroom={value => onDecrementBedroom(value)}
+        onIncrementBedroom={value => onIncrementBedroom(value)}
         instantBookCheckbox={instantBookCheckbox}
         onInstantBookToggle={value => onInstantBookToggle(value)}
       />
@@ -45,19 +45,25 @@ const Extension = (
       <CheckboxGroup
         title="neighborhoods"
         checkboxGroup={checkboxGroup.get('neighborhoods')}
-        setCheckbox={(checkboxName, checkboxGroupName) => setCheckbox(checkboxName, checkboxGroupName)}
+        onSetCheckboxGroupItem={
+          (checkboxName, checkboxGroupName) => onSetCheckboxGroupItem(checkboxName, checkboxGroupName)
+        }
       />
 
       <CheckboxGroup
         title="amenities"
         checkboxGroup={checkboxGroup.get('amenities')}
-        setCheckbox={(checkboxName, checkboxGroupName) => setCheckbox(checkboxName, checkboxGroupName)}
+        onSetCheckboxGroupItem={
+          (checkboxName, checkboxGroupName) => onSetCheckboxGroupItem(checkboxName, checkboxGroupName)
+        }
       />
 
       <CheckboxGroup
         title="propertyType"
         checkboxGroup={checkboxGroup.get('propertyType')}
-        setCheckbox={(checkboxName, checkboxGroupName) => setCheckbox(checkboxName, checkboxGroupName)}
+        onSetCheckboxGroupItem={
+          (checkboxName, checkboxGroupName) => onSetCheckboxGroupItem(checkboxName, checkboxGroupName)
+        }
       />
 
       {/* <EnhancedDropdown
@@ -69,12 +75,12 @@ const Extension = (
 
 NoticeBar.propTypes = {
   bedroom: PropTypes.number,
-  incrementBedroom: PropTypes.func,
-  decrementBedroom: PropTypes.func,
+  onIncrementBedroom: PropTypes.func,
+  onDecrementBedroom: PropTypes.func,
   checkboxGroup: PropTypes.string,
-  setCheckbox: PropTypes.func,
+  onSetCheckboxGroupItem: PropTypes.func,
   perfectOption: PropTypes.string,
-  setSelectedOption: PropTypes.func,
+  onSetPerfectOption: PropTypes.func,
   onFilterSend: PropTypes.func,
   onFilterCancel: PropTypes.func,
   instantBookCheckbox: PropTypes.bool,

@@ -1,19 +1,19 @@
 import { setCounter, increment, decrement } from './counter';
 import { setDates } from './dateInput';
-import { setCheckbox, getCheckboxesSelected } from './checkboxGroup';
+import { setCheckbox } from './checkboxGroup';
 import { setRange } from './rangeInput';
-import { setSelectedOption } from './perfectOption';
+import { setPerfectOption } from './perfectOption';
 import { setBedroom, incrementBedroom, decrementBedroom } from './bedroom';
-import { onFilterSend, onFilterCancel } from './filter';
-import { onInstantBookToggle } from './instantBook';
+import { onFilterSend, onFilterCancel, setFilterObject } from './filter';
+import { instantBookToggle } from './instantBook';
 
 export {
   setCounter, increment, decrement,
   setDates,
-  setCheckbox, getCheckboxesSelected,
+  setCheckbox,
   setRange,
-  setSelectedOption,
+  setPerfectOption,
   setBedroom, incrementBedroom, decrementBedroom,
-  onFilterSend, onFilterCancel,
-  onInstantBookToggle,
+  onFilterSend, onFilterCancel, setFilterObject,
+  instantBookToggle,
 };

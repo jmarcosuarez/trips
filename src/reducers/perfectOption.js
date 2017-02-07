@@ -13,22 +13,18 @@ const initialState = fromJS(
       { value: 'Family holiday (everyone aged 15+)' },
     ],
     optionSelected: 0,
-    instantBook: {
-      storeId: 'Instant Book',
-      initial: false,
-    },
   }
 );
 
 export default function (state = initialState, action) {
   switch (action.type) {
     case actionTypes.SET_PERFECT_OPTION:
-      return setSelectedOption(state, action);
+      return setPerfectOption(state, action);
   }
   return state;
 }
 
-function setSelectedOption(state, action) {
+function setPerfectOption(state, action) {
   const { option } = action;
   return state.set('optionSelected', option);
 }

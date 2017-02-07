@@ -1,4 +1,5 @@
 import * as actionTypes from '../constants/actionTypes';
+import { setFilterObject } from '../actions/filter';
 
 export function setBedroom(bedroom) {
   return {
@@ -7,13 +8,27 @@ export function setBedroom(bedroom) {
   };
 }
 
-export function incrementBedroom() {
+export const incrementBedroom = () => (dispatch) => {
+  dispatch(increment());
+  // Now, save it to the filter object
+  const optionSelected = 'bedroom';
+  dispatch(setFilterObject(optionSelected));
+};
+
+export const decrementBedroom = () => (dispatch) => {
+  dispatch(decrement());
+  // Now, save it to the filter object
+  const optionSelected = 'bedroom';
+  dispatch(setFilterObject(optionSelected));
+};
+
+function increment() {
   return {
     type: actionTypes.INCREMENT_BEDROOM,
   };
 }
 
-export function decrementBedroom() {
+function decrement() {
   return {
     type: actionTypes.DECREMENT_BEDROOM,
   };

@@ -20,13 +20,13 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
   return {
-    incrementBedroom: bindActionCreators(actions.incrementBedroom, dispatch),
-    decrementBedroom: bindActionCreators(actions.decrementBedroom, dispatch),
-    setCheckbox: bindActionCreators(actions.setCheckbox, dispatch),
-    setSelectedOption: bindActionCreators(actions.setSelectedOption, dispatch),
+    onIncrementBedroom: bindActionCreators(actions.incrementBedroom, dispatch),
+    onDecrementBedroom: bindActionCreators(actions.decrementBedroom, dispatch),
+    onSetCheckboxGroupItem: bindActionCreators(actions.setCheckbox, dispatch),
+    onSetPerfectOption: bindActionCreators(actions.setPerfectOption, dispatch),
     onFilterSend: bindActionCreators(actions.onFilterSend, dispatch),
     onFilterCancel: bindActionCreators(actions.onFilterCancel, dispatch),
-    onInstantBookToggle: bindActionCreators(actions.onInstantBookToggle, dispatch),
+    onInstantBookToggle: bindActionCreators(actions.instantBookToggle, dispatch),
   };
 }
 

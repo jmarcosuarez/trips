@@ -39,9 +39,9 @@ export default class Bedroom extends Component {
           <p>
             Rooms: {bedroom}
             {' '}
-            <button onClick={incrementBedroom}>+</button>
+            <button className="btn btn-default" onClick={incrementBedroom}>+</button>
             {' '}
-            <button onClick={decrementBedroom}>-</button>
+            <button className="btn btn-default" onClick={decrementBedroom}>-</button>
           </p>
         </div>
       </div>

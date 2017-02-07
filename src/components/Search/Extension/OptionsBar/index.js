@@ -9,8 +9,8 @@ import { Dropdown } from '../../components/Dropdown';
 
 const EnhancedDropdown = enhancer(Dropdown);
 
-const OptionsBar = ({ perfectOption = [], bedroom, incrementBedroom, decrementBedroom,
-  setSelectedOption, instantBookCheckbox, onInstantBookToggle }) =>
+const OptionsBar = ({ perfectOption = [], bedroom, onIncrementBedroom, onDecrementBedroom,
+  onSetPerfectOption, instantBookCheckbox, onInstantBookToggle }) =>
     <div className={styles.optionsBar}>
       <ul>
         <li>
@@ -20,15 +20,15 @@ const OptionsBar = ({ perfectOption = [], bedroom, incrementBedroom, decrementBe
         </li>
         <li>
           <EnhancedDropdown
-            onSelect={option => setSelectedOption(option)}
+            onSelect={option => onSetPerfectOption(option)}
             data={perfectOption}
           />
         </li>
         <li>
           <Bedroom
             bedroom={bedroom}
-            decrementBedroom={value => decrementBedroom(value)}
-            incrementBedroom={value => incrementBedroom(value)}
+            decrementBedroom={value => onDecrementBedroom(value)}
+            incrementBedroom={value => onIncrementBedroom(value)}
           />
         </li>
         <li>

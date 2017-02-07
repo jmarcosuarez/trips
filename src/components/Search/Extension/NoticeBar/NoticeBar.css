@@ -23,5 +23,5 @@
 }
 
 .noticeBar ul > li:first-child {
-  flex: 3;
+  /*flex: 3;*/
 }

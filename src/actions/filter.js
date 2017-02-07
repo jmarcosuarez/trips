@@ -1,15 +1,4 @@
 import * as actionTypes from '../constants/actionTypes';
-import * as checkboxGroupSelectors from '../reducers/checkboxGroup';
-// import { getCheckboxesSelected } from './checkboxGroup';
-// import { getOptionsSelected } from '../../actions/toggle';
-// import { getRoomsSelected } from '../../actions/toggle';
-// import { isInstantBookSelected } from '../../actions/toggle';
-
-// export function onFilterSend() {
-//   return {
-//     type: actionTypes.ON_FILTER_SEND,
-//   };
-// }
 
 export function onFilterCancel() {
   return {
@@ -17,38 +6,38 @@ export function onFilterCancel() {
   };
 }
 
-export const onFilterSend = () => (dispatch, getState) => {
-  const playlist = getState().checkboxGroup;
-  const selected = checkboxGroupSelectors.getSelected(getState());
-  // console.log(selected);
-  // const checkboxesSelected = dispatch(getCheckboxesSelected());
-  // const optionsSelected = dispatch(getOptionsSelected());
-  // const roomsSelected = dispatch(getRoomsSelected());
-  // const instantBookSelected = dispatch(isInstantBookSelected());
-  //  Then, construct the params string and send to server
+export function onFilterSend() {
+  return {
+    type: actionTypes.ON_FILTER_SEND,
+  };
+}
+
+export const setFilterObject = (optionSelected) => (dispatch, getState) => {
+  console.log(optionSelected, 'setFilterObject');
+  // Now, save it to the filter object
 };
 
-// function getCheckboxesSelected() {
-//   return {
-//     type: actionTypes.RESET_PLAYLIST,
-//   };
-// }
-
-function getOptionsSelected() {
-  return {
-    type: actionTypes.RESET_ACTIVE_TRACK,
-  };
+/**
+ * Helper: Adding params to url
+ */
+function queryParams(params) {
+  return Object.keys(params)
+    .map(k => `${encodeURIComponent(k)}=${encodeURIComponent(params[k])}`)
+    .join('&');
 }
 
-function getRoomsSelected() {
-  return {
-    type: actionTypes.RESET_ACTIVE_TRACK,
-  };
-}
+/**
+ * Click on Apply on filters extension gets here
+ * Construct params string and send to the server
+ */
+export function loadContacts(limit = types.LIMIT, offset = 0) {
+  const baseUrl = '//localhost:8000';
+  let url = `${baseUrl}/users/`;
+  const params = { limit, offset };
+  url += (url.indexOf('?') === -1 ? '?' : '&') + queryParams(params);
 
-function isInstantBookSelected() {
-  return {
-    type: actionTypes.RESET_ACTIVE_TRACK,
-  };
+  // return {
+  //   types: [types.CONTACTS_REQUEST, types.CONTACTS_SUCCESS, types.CONTACTS_FAILURE],
+  //   promise: fetch(url),
+  // };
 }
-
