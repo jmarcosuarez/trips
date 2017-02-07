@@ -9,23 +9,24 @@
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
 }
 
 .optionsBar ul > li {
-  padding: 0 40px;
-  flex: auto;
+  margin: 0 25px;
+  flex: 0 0 200px;
   text-align: left;
 }
 .optionsBar input + label {
-  width: 150px;
+  /*width: 150px;*/
 
 }
 
 .optionsBar ul > li:first-child {
   padding: 0;
+  /*width: 100px;*/
 }
 
 .optionsBar ul > li:last-child {
