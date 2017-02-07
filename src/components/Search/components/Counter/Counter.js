@@ -38,9 +38,7 @@ export default class Counter extends Component {
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <p>
             Guests: {counter}
-            {' '}
             <button className="btn btn-default" onClick={decrement}>-</button>
-            {' '}
             <button className="btn btn-default" onClick={increment}>+</button>
           </p>
         </div>

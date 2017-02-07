@@ -26,6 +26,7 @@ ReactDOM.render(
   <Provider store={store}>
     <div>
       <Router history={history} routes={routes} />
+      {/* <DevTools /> */}
       <DevTools />
     </div>
   </Provider>,

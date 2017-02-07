@@ -17,10 +17,16 @@ class DateInput extends Component {
     this.onClose = this.onClose.bind(this);
   }
   componentDidMount() {
-    global.window.addEventListener('click', this.handleDocumentClick);
+    // global.window.addEventListener('click', this.handleDocumentClick);
+  }
+  componentWillReceiveProps(nextProps) {
+    // Closes dropdown when the 2 dates are selected
+    if (nextProps.dates.get('end') !== undefined) {
+      this.onToggle();
+    }
   }
   componentWillUnmount() {
-    global.window.removeEventListener('click', this.handleDocumentClick);
+    // global.window.removeEventListener('click', this.handleDocumentClick);
   }
   onToggle() {
     this.setState({ isOpen: !this.state.isOpen });
@@ -29,7 +35,6 @@ class DateInput extends Component {
     this.onToggle();
   }
   //  Right now document click is disabled because it doesn't let choose range of dates
-  //  Meaning after first click it closes and we will need two clicks before it closes.
   handleDocumentClick() {
     if (this.state.isOpen) {
       // this.onToggle();
@@ -38,7 +43,8 @@ class DateInput extends Component {
   render() {
     const { dates, setDates } = this.props;
     return (
-      <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
+      // <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
+      <div className={styles.dropdown}>
         <button onClick={this.onToggle}>
          From: {moment(dates.get('start')).format('MM/DD/YYYY')} - To: {moment(dates.get('end')).format('MM/DD/YYYY')}
         </button>

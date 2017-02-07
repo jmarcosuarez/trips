@@ -41,7 +41,7 @@ export default class Range extends Component {
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <InputRange
             formatLabel={value => `${value}`}
-            step={1}
+            step={10}
             maxValue={500}
             minValue={0}
             value={this.props.range}

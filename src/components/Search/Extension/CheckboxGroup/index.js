@@ -12,7 +12,7 @@ const CheckboxGroup = ({ title, checkboxGroup, setCheckbox }) =>
         />
       </li>
       {
-        checkboxGroup.map((value) =>
+        checkboxGroup.map((value, key) =>
           <li>
             <Checkbox
               key={value.get('storeId')}
