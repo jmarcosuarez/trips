@@ -22,7 +22,7 @@ class DateInput extends Component {
   componentWillReceiveProps(nextProps) {
     // Closes dropdown when the 2 dates are selected
     if (nextProps.dates.get('end') !== undefined) {
-      this.onToggle();
+      this.setState({ isOpen: false });
     }
   }
   componentWillUnmount() {
