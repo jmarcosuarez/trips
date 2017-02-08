@@ -10,12 +10,14 @@ function mapStateToProps(state) {
   const perfectOption = state.perfectOption;
   const bedroom = state.bedroom;
   const instantBookCheckbox = state.instantBookCheckbox;
+  const currentFilters = state.filter.get('filters');
 
   return {
     bedroom,
     checkboxGroup,
     perfectOption,
     instantBookCheckbox,
+    currentFilters,
   };
 }
 function mapDispatchToProps(dispatch) {

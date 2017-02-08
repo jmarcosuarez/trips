@@ -10,6 +10,7 @@ function mapStateToProps(state) {
   const dateInput = state.dateInput;
   const rangeInput = state.rangeInput;
 
+
   return {
     counter,
     dateInput,

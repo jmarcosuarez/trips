@@ -42,7 +42,6 @@ function queryParams(data) {
  * Prepare the params string to be send to server
  */
 export const onFilterSend = () => (dispatch, getState) => {
-
   // Prepare object extracting keys and values into plain object
   const filterObject = getState().filter.get('filters').toJS();
   const vals = Object.keys(filterObject).map(key => filterObject[key]);

@@ -1,27 +1,33 @@
 .noticeBar {
+  position: relative;
   padding: 20px;
   margin: 20px;
   border: 1px solid  #ececec;
 }
 
 .noticeBar ul {
-  list-style: none;
   padding: 0;
   margin: 0;
+  width: 50%;
+  list-style-type: none;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-between;
 }
 
 .noticeBar ul > li {
-  flex: 1;
-  font-size: 1.50em;
-  text-align: left;
-  font-variant-caps: all-petite-caps;
-  margin: 0 10px;
+  list-style-type: none;
+  flex: auto;
 }
 
-.noticeBar ul > li:first-child {
-  /*flex: 3;*/
+.button {
+  float: right;
+}
+
+.button li {
+  text-align: right;
+}
+
+.button li:first-child {
+  margin: 10px;
 }

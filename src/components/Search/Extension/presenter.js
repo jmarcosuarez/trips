@@ -23,11 +23,13 @@ const Extension = (
     onFilterCancel,
     instantBookCheckbox,
     onInstantBookToggle,
+    currentFilters,
   }) =>
 
     <div className={styles.extension}>
 
       <NoticeBar
+        currentFilters={currentFilters}
         onFilterSend={() => onFilterSend()}
         onFilterCancel={() => onFilterCancel()}
       />

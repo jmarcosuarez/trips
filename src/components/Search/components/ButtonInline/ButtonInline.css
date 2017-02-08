@@ -1,0 +1,16 @@
+.buttonInline {
+  border: 1px solid #ececec;
+  background: transparent;
+  color: inherit;
+  text-align: inherit;
+  -webkit-font-smoothing: inherit;
+  padding: 5px;
+  margin: 2px;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.buttonInline:focus {
+  background: transparent;
+  outline: none;
+}
