@@ -4,7 +4,7 @@ import { setCheckbox } from './checkboxGroup';
 import { setRange } from './rangeInput';
 import { setPerfectOption } from './perfectOption';
 import { setBedroom, incrementBedroom, decrementBedroom } from './bedroom';
-import { onFilterSend, addFilter, onFilterCancel, setFilterObject } from './filter';
+import { onFilterSend, onFilterCancel, setFilterObject } from './filter';
 import { instantBookToggle } from './instantBook';
 
 export {
@@ -14,6 +14,6 @@ export {
   setRange,
   setPerfectOption,
   setBedroom, incrementBedroom, decrementBedroom,
-  onFilterSend, addFilter, onFilterCancel, setFilterObject,
+  onFilterSend, onFilterCancel, setFilterObject,
   instantBookToggle,
 };

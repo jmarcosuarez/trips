@@ -14,7 +14,7 @@ const initialState = fromJS(
       { id: 'Page', value: 1 },
       { id: 'CityId', value: 1 },
       { id: 'IsInstantBook', value: false },
-      { id: 'Neighbourhoods', value: [] },
+      { id: 'Neighbourhoods', value: [1, 2] },
       { id: 'Amenities', value: [] },
       { id: 'PropertyType', value: [] },
     ],
@@ -26,7 +26,7 @@ export default function (state = initialState, action) {
     case actionTypes.ON_FILTER_SEND:
       return onFilterSend(state);
     case actionTypes.ON_FILTER_SAVE:
-      return addFilter(state, action);
+      return setFilterObject(state, action);
     case actionTypes.ON_FILTER_CANCEL:
       return onFilterCancel(state);
   }
@@ -46,7 +46,7 @@ function onFilterCancel(state) {
  * @key= Is the key on filters object where to save to
  * @value= (number) Is the value to be saved
  */
-function addFilter(state, action) {
+function setFilterObject(state, action) {
   const { key, value } = action;
   // This works for now, but it would not be better to find() the entry and set its value?
   return state.setIn(['filters', key, 'value'], value);
