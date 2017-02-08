@@ -12,7 +12,6 @@ class List extends React.Component {
 
   renderNav() {
     const { currentFilters } = this.props;
-
     return (
       <div className={styles.list}>
         <FilterList currentFilters={currentFilters} />

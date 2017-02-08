@@ -3,6 +3,9 @@
     margin: 20px;
     border: 1px solid  #ececec;
 }
+.list ul {
+  width: 100%; /* overwrites the setting in extension */
+}
 
 .toolbar {
   padding: 20px;
