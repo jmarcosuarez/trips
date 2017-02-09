@@ -7,11 +7,6 @@
   position: relative;
 }
 
-.dropdown p {
-  padding: 5px;
-  color: #000;
-}
-
 .dropdown button {
    height: 100%;
     opacity: 1; 
@@ -23,10 +18,14 @@
     width: 100%;
     /*border: 1px solid #BDBDBD;*/
     outline: none;
-    /*padding: 8px;*/
+    padding: 0 8px;
     /*margin: 0 0 8px 0;*/
     text-align: left;
     cursor: pointer;
+}
+
+.dropdown button > i {
+  padding-left: 10px;
 }
 
 .dropdown > div {

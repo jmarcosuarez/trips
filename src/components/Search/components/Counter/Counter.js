@@ -33,7 +33,7 @@ export default class Counter extends Component {
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-          Guests: {counter}
+          Guests: {counter} <i className="glyphicon glyphicon-menu-down" />
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <p>

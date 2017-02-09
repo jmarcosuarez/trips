@@ -36,7 +36,7 @@ export default class Range extends Component {
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-         Price: {this.props.range.min} - {this.props.range.max}
+         Price: {this.props.range.min} - {this.props.range.max} <i className="glyphicon glyphicon-menu-down" />
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <InputRange

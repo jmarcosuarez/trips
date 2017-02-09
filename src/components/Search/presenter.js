@@ -44,7 +44,7 @@ class Search extends Component {
             <Link to="/extension">
               <div className={styles.menu}>
                 <i className="glyphicon glyphicon-filter" /> More Filters
-                <i className="glyphicon glyphicon-menu-down" />
+                <span><i className="glyphicon glyphicon-menu-down" /></span>
               </div>
             </Link>
           </ButtonGhost>
@@ -52,11 +52,10 @@ class Search extends Component {
           <ButtonGhost>
             <Link to="/list">
               <div className={styles.menu}>
-                <i className="glyphicon glyphicon-map-marker" /> MAP VIEW
+                <span className={styles.mapViewBtn}><i className="glyphicon glyphicon-map-marker" /> MAP VIEW</span>
               </div>
             </Link>
           </ButtonGhost>
-
         </div>
 
         <div className={styles.landing}>
@@ -64,7 +63,6 @@ class Search extends Component {
           {this.props.children || 'Welcome to Landing'}
 
         </div>
-
       </div>
     );
   }

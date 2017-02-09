@@ -47,6 +47,7 @@ class DateInput extends Component {
       <div className={styles.dropdown}>
         <button onClick={this.onToggle}>
          From: {moment(dates.get('start')).format('MM/DD/YYYY')} - To: {moment(dates.get('end')).format('MM/DD/YYYY')}
+          <i className="glyphicon glyphicon-menu-down" />
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <Flatpickr

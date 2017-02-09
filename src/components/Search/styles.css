@@ -1,22 +1,46 @@
 .search {
+  width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
 
 .menu {
   display: inline-block;
+  color: #000 !important;
   height: 60px;
   opacity: 1; 
   border: 0; 
   background: transparent; 
-  font-size: 1.25em;
-  /*background-color: #FAFAFA;*/
+  font-size: 1.2em;
+  background-color: #FAFAFA;
   width: 100%;
   /*border: 1px solid #BDBDBD;*/
   outline: none;
-  padding: 17px;
+  padding: 18px 8px;
   /*margin: 0 0 8px 0;*/
   text-align: left;
   cursor: pointer;
+}
+
+.menu span i {
+  padding-left: 10px;
+}
+
+.menu span.mapViewBtn i{
+  padding-left: 0;
+}
+
+.mapViewBtn {
+  padding-right: 10px;
+}
+
+.menu:hover {
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    background-color: #ececec;
+    color: #FFFFFF !important;
 }
