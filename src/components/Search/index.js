@@ -21,7 +21,7 @@ function mapDispatchToProps(dispatch) {
   return {
     increment: bindActionCreators(actions.increment, dispatch),
     decrement: bindActionCreators(actions.decrement, dispatch),
-    setDates: bindActionCreators(actions.setDates, dispatch),
+    onSetDates: bindActionCreators(actions.setDates, dispatch),
     setRange: bindActionCreators(actions.setRange, dispatch),
   };
 }

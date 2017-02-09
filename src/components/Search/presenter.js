@@ -12,7 +12,7 @@ class Search extends Component {
   render() {
     const {
       counter, increment, decrement,
-      dateInput, setDates,
+      dateInput, onSetDates,
       rangeInput, setRange,
     } = this.props;
     return (
@@ -21,7 +21,7 @@ class Search extends Component {
           <ButtonGhost>
             <DateInput
               dates={dateInput}
-              setDates={range => setDates(range)}
+              onSetDates={range => onSetDates(range)}
             />
           </ButtonGhost>
 
@@ -73,7 +73,7 @@ Search.propTypes = {
   increment: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
   // dateInput: PropTypes.object,
-  setDates: PropTypes.func.isRequired,
+  onSetDates: PropTypes.func.isRequired,
   // rangeInput: PropTypes.object,
   setRange: PropTypes.func.isRequired,
 };

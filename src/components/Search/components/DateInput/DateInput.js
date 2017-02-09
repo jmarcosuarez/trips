@@ -21,7 +21,7 @@ class DateInput extends Component {
   }
   componentWillReceiveProps(nextProps) {
     // Closes dropdown when the 2 dates are selected
-    if (nextProps.dates.get('end') !== undefined) {
+    if (this.state.isOpen && nextProps.dates.get('end') !== undefined) {
       this.setState({ isOpen: false });
     }
   }
@@ -41,7 +41,7 @@ class DateInput extends Component {
     }
   }
   render() {
-    const { dates, setDates } = this.props;
+    const { dates, onSetDates } = this.props;
     return (
       // <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
       <div className={styles.dropdown}>
@@ -52,7 +52,7 @@ class DateInput extends Component {
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <Flatpickr
             // placeholder={'From -> To'}
-            onChange={setDates}
+            onChange={onSetDates}
             options={{
               mode: 'range',
               inline: true,
