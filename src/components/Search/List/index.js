@@ -10,7 +10,7 @@ class List extends React.Component {
   componentDidUpdate() {
   }
 
-  renderNav() {
+  renderToolBar() {
     const { currentFilters } = this.props;
     return (
       <div className={styles.list}>
@@ -20,7 +20,7 @@ class List extends React.Component {
   }
 
   render() {
-    return <div className={styles.filterList}>{this.renderNav()}</div>;
+    return <div className={styles.filterList}>{this.renderToolBar()}</div>;
   }
 
 }

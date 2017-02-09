@@ -6,7 +6,7 @@ import styles from './styles.css';
 import GuestCounter from './components/GuestCounter';
 import Range from './components/InputRange';
 import DateInput from './components/DateInput/DateInput';
-import ButtonGhost from './components/ButtonGhost';
+import MenuItem from './components/MenuItem';
 
 class Search extends Component {
   render() {
@@ -18,45 +18,45 @@ class Search extends Component {
     return (
       <div>
         <div className={styles.search}>
-          <ButtonGhost>
+          <MenuItem>
             <DateInput
               dates={dateInput}
               onSetDates={range => onSetDates(range)}
             />
-          </ButtonGhost>
+          </MenuItem>
 
-          <ButtonGhost>
+          <MenuItem>
             <GuestCounter
               guestCounter={guestCounter}
               onDecrementGuest={value => onDecrementGuest(value)}
               onIncrementGuest={value => onIncrementGuest(value)}
             />
-          </ButtonGhost>
+          </MenuItem>
 
-          <ButtonGhost>
+          <MenuItem>
             <Range
               range={rangeInput.get('range')}
               onSetPriceRange={range => onSetPriceRange(range)}
               onSavePriceRange={range => onSavePriceRange(range)}
             />
-          </ButtonGhost>
+          </MenuItem>
 
-          <ButtonGhost>
+          <MenuItem>
             <Link to="/extension">
               <div className={styles.menu}>
                 <i className="glyphicon glyphicon-filter" /> More Filters
                 <span><i className="glyphicon glyphicon-menu-down" /></span>
               </div>
             </Link>
-          </ButtonGhost>
+          </MenuItem>
 
-          <ButtonGhost>
+          <MenuItem>
             <Link to="/list">
               <div className={styles.menu}>
                 <span className={styles.mapViewBtn}><i className="glyphicon glyphicon-map-marker" /> MAP VIEW</span>
               </div>
             </Link>
-          </ButtonGhost>
+          </MenuItem>
         </div>
 
         <div className={styles.landing}>

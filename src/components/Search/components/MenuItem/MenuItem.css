@@ -1,9 +1,9 @@
-.buttonGhost {
+.menuItem {
   padding: 0;
   margin: 0;
 }
 
-.buttonGhost {
+.menuItem {
   display: inline-block;
   border: 1px solid #ececec;
   height: 60px;
@@ -28,7 +28,7 @@
   -webkit-backface-visibility: hidden;
 }
 
-.buttonGhost:hover {
+.menuItem:hover {
     -webkit-transition: 0.2s ease;
     -moz-transition: 0.2s ease;
     -o-transition: 0.2s ease;
@@ -37,11 +37,11 @@
     color: #FFFFFF !important;
 }
 
-.buttonGhost:focus {
+.menuItem:focus {
     outline: none;
 }
 
-.buttonGhost button {
+.menuItem button {
   /*background-color: pink;*/
 
 /*    height: 100%;
