@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import counter from './counter';
+import guestCounter from './guestCounter';
 import dateInput from './dateInput';
 import checkboxGroup from './checkboxGroup';
 import rangeInput from './rangeInput';
@@ -11,7 +11,7 @@ import filter from './filter';
 import instantBookCheckbox from './instantBookCheckbox';
 
 export default combineReducers({
-  counter,
+  guestCounter,
   dateInput,
   checkboxGroup,
   rangeInput,

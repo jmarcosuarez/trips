@@ -1,4 +1,4 @@
-import { setCounter, increment, decrement } from './counter';
+import { setCounter, incrementGuest, decrementGuest } from './guestCounter';
 import { setDates } from './dateInput';
 import { setCheckbox } from './checkboxGroup';
 import { setRange } from './rangeInput';
@@ -8,7 +8,7 @@ import { onFilterSend, onFilterCancel, setFilterObject } from './filter';
 import { instantBookToggle } from './instantBook';
 
 export {
-  setCounter, increment, decrement,
+  setCounter, incrementGuest, decrementGuest,
   setDates,
   setCheckbox,
   setRange,

@@ -6,7 +6,7 @@ import FilterList from '../../components/FilterList';
 import styles from './NoticeBar.css';
 
 const NoticeBar = ({ onFilterSend, onFilterCancel, currentFilters }) =>
-  <div className={`${styles.noticeBar} clearfix`}>   
+  <div className={`${styles.noticeBar} clearfix`}>
     <ul className={styles.button}>
       <li>
         <Link onClick={() => onFilterCancel()} to="/list">

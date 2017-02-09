@@ -8,6 +8,18 @@ export function setBedroom(bedroom) {
   };
 }
 
+function increment() {
+  return {
+    type: actionTypes.INCREMENT_BEDROOM,
+  };
+}
+
+function decrement() {
+  return {
+    type: actionTypes.DECREMENT_BEDROOM,
+  };
+}
+
 /**
   * Helper fucntion:
   * For saving filtering data we need the key of this specific item on the filters store
@@ -30,15 +42,3 @@ export const decrementBedroom = () => (dispatch) => {
   dispatch(decrement());
   dispatch(prepareAndSendToFilter());
 };
-
-function increment() {
-  return {
-    type: actionTypes.INCREMENT_BEDROOM,
-  };
-}
-
-function decrement() {
-  return {
-    type: actionTypes.DECREMENT_BEDROOM,
-  };
-}

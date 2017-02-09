@@ -6,21 +6,21 @@ import * as actions from '../../actions';
 import Search from './presenter';
 
 function mapStateToProps(state) {
-  const counter = state.counter;
+  const guestCounter = state.guestCounter;
   const dateInput = state.dateInput;
   const rangeInput = state.rangeInput;
 
 
   return {
-    counter,
+    guestCounter,
     dateInput,
     rangeInput,
   };
 }
 function mapDispatchToProps(dispatch) {
   return {
-    increment: bindActionCreators(actions.increment, dispatch),
-    decrement: bindActionCreators(actions.decrement, dispatch),
+    onIncrementGuest: bindActionCreators(actions.incrementGuest, dispatch),
+    onDecrementGuest: bindActionCreators(actions.decrementGuest, dispatch),
     onSetDates: bindActionCreators(actions.setDates, dispatch),
     setRange: bindActionCreators(actions.setRange, dispatch),
   };

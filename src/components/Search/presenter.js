@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 
 import styles from './styles.css';
-import Counter from './components/Counter/Counter';
+import GuestCounter from './components/GuestCounter';
 import Range from './components/InputRange/Range';
 import DateInput from './components/DateInput/DateInput';
 import ButtonGhost from './components/ButtonGhost';
@@ -11,7 +11,7 @@ import ButtonGhost from './components/ButtonGhost';
 class Search extends Component {
   render() {
     const {
-      counter, increment, decrement,
+      guestCounter, onIncrementGuest, onDecrementGuest,
       dateInput, onSetDates,
       rangeInput, setRange,
     } = this.props;
@@ -26,10 +26,10 @@ class Search extends Component {
           </ButtonGhost>
 
           <ButtonGhost>
-            <Counter
-              counter={counter}
-              decrement={value => decrement(value)}
-              increment={value => increment(value)}
+            <GuestCounter
+              guestCounter={guestCounter}
+              onDecrementGuest={value => onDecrementGuest(value)}
+              onIncrementGuest={value => onIncrementGuest(value)}
             />
           </ButtonGhost>
 
@@ -69,9 +69,9 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  counter: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-  decrement: PropTypes.func.isRequired,
+  // guestCounter: PropTypes.number.isRequired,
+  onIncrementGuest: PropTypes.func.isRequired,
+  onDecrementGuest: PropTypes.func.isRequired,
   // dateInput: PropTypes.object,
   onSetDates: PropTypes.func.isRequired,
   // rangeInput: PropTypes.object,

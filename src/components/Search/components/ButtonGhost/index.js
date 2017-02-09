@@ -3,9 +3,9 @@ import styles from './ButtonGhost.css';
 
 function ButtonGhost({ onClick, isSmall, children }) {
   return (
-    <button className={styles.buttonGhost} type="button" onClick={onClick}>
+    <div className={styles.buttonGhost}>
       {children}
-    </button>
+    </div>
   );
 }
 

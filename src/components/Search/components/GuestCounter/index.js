@@ -1,9 +1,9 @@
 /* eslint react/prefer-stateless-function: 0 */
 
 import React, { Component } from 'react';
-import styles from './Counter.css';
+import styles from './GuestCounter.css';
 
-export default class Counter extends Component {
+export default class GuestCounter extends Component {
   constructor(props) {
     super(props);
     this.onDocumentClick = this.onDocumentClick.bind(this);
@@ -29,17 +29,17 @@ export default class Counter extends Component {
   }
 
   render() {
-    const { increment, decrement, counter } = this.props;
+    const { onIncrementGuest, onDecrementGuest, guestCounter } = this.props;
     return (
       <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
         <button onClick={this.onToggle}>
-          Guests: {counter} <i className="glyphicon glyphicon-menu-down" />
+          Guests: {guestCounter} <i className="glyphicon glyphicon-menu-down" />
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>
           <p>
-            Guests: {counter}
-            <button className="btn btn-default" onClick={decrement}>-</button>
-            <button className="btn btn-default" onClick={increment}>+</button>
+            Guests: {guestCounter}
+            <button className="btn btn-default" onClick={onDecrementGuest}>-</button>
+            <button className="btn btn-default" onClick={onIncrementGuest}>+</button>
           </p>
         </div>
       </div>
