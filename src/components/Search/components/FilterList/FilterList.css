@@ -13,5 +13,5 @@
 
 .filterList ul li {
   list-style-type: none;
-  flex: auto;
+  flex: 0 0 100px;
 }

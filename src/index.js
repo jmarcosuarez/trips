@@ -27,7 +27,7 @@ ReactDOM.render(
     <div>
       <Router history={history} routes={routes} />
       {/* <DevTools /> */}
-      <DevTools />
+      
     </div>
   </Provider>,
   document.getElementById('app')

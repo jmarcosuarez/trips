@@ -3,11 +3,11 @@ import ButtonInline from '../ButtonInline';
 
 import styles from './FilterList.css';
 
-function PlaylistItem({ value }) {
+function PlaylistItem({ item }) {
   return (
     <li>
       <ButtonInline>
-        {`${value.get('id')}: ${value.get('value')}`}
+        {`${item.get('id')}: ${item.get('value')}`}
       </ButtonInline>
     </li>
   );
@@ -18,7 +18,7 @@ const FilterList = ({ currentFilters }) =>
     <ul>
       {
         currentFilters.map((value, key) => {
-          return <PlaylistItem value={value} />;
+          return <PlaylistItem item={value} />;
         })
       }
     </ul>

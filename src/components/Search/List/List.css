@@ -3,40 +3,7 @@
     margin: 20px;
     border: 1px solid  #ececec;
 }
+
 .list ul {
   width: 100%; /* overwrites the setting in extension */
-}
-
-.toolbar {
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid  #ececec;
-}
-
-.toolbar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.toolbar ul > li {
-  flex: 1;
-  font-size: 1.50em;
-  text-align: left;
-  font-variant-caps: all-petite-caps;
-  margin: 0 10px;
-}
-
-.toolbar ul > li:first-child {
-  flex: 3;
-}
-
-.main {
-  padding: 20px;
-  margin: 20px;
-  border: 1px solid  #ececec;
 }
