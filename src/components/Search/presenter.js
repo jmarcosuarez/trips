@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 import styles from './styles.css';
 import GuestCounter from './components/GuestCounter';
-import Range from './components/InputRange/Range';
+import Range from './components/InputRange';
 import DateInput from './components/DateInput/DateInput';
 import ButtonGhost from './components/ButtonGhost';
 
@@ -13,7 +13,7 @@ class Search extends Component {
     const {
       guestCounter, onIncrementGuest, onDecrementGuest,
       dateInput, onSetDates,
-      rangeInput, setRange,
+      rangeInput, onSetPriceRange,
     } = this.props;
     return (
       <div>
@@ -36,7 +36,7 @@ class Search extends Component {
           <ButtonGhost>
             <Range
               range={rangeInput.get('range')}
-              setRange={range => setRange(range)}
+              onSetPriceRange={range => onSetPriceRange(range)}
             />
           </ButtonGhost>
 
@@ -75,7 +75,7 @@ Search.propTypes = {
   // dateInput: PropTypes.object,
   onSetDates: PropTypes.func.isRequired,
   // rangeInput: PropTypes.object,
-  setRange: PropTypes.func.isRequired,
+  onSetPriceRange: PropTypes.func.isRequired,
 };
 
 export default Search;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import InputRange from 'react-input-range';
 import 'react-input-range/lib/css/index.css';
-// import '../../../../../node_modules/react-input-range/lib/css/index.css';
 import styles from './Range.css';
 
 export default class Range extends Component {
@@ -25,7 +24,7 @@ export default class Range extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   }
   handleChange(values) {
-    this.props.setRange(values);
+    this.props.onSetPriceRange(values);
   }
   handleDocumentClick() {
     if (this.state.isOpen) {
