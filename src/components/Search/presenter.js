@@ -6,6 +6,7 @@ import styles from './styles.css';
 import Counter from './components/Counter/Counter';
 import Range from './components/InputRange/Range';
 import DateInput from './components/DateInput/DateInput';
+import ButtonGhost from './components/ButtonGhost';
 
 class Search extends Component {
   render() {
@@ -17,42 +18,45 @@ class Search extends Component {
     return (
       <div>
         <div className={styles.search}>
-          <ul className="list-inline">
-            <li>
-              <DateInput
-                dates={dateInput}
-                setDates={range => setDates(range)}
-              />
-            </li>
-            <li>
-              <Counter
-                counter={counter}
-                decrement={value => decrement(value)}
-                increment={value => increment(value)}
-              />
-            </li>
-            <li>
-              <Range
-                range={rangeInput.get('range')}
-                setRange={range => setRange(range)}
-              />
-            </li>
-            <li>
-              <Link to="/extension">
-                <p>
-                  <i className="glyphicon glyphicon-filter" /> More Filters
-                  <i className="glyphicon glyphicon-menu-down" />
-                </p>
-              </Link>
-            </li>
-            <li>
-              <Link to="/list">
-                <p>
-                  <i className="glyphicon glyphicon-map-marker" /> MAP VIEW
-                </p>
-              </Link>
-            </li>
-          </ul>
+          <ButtonGhost>
+            <DateInput
+              dates={dateInput}
+              setDates={range => setDates(range)}
+            />
+          </ButtonGhost>
+
+          <ButtonGhost>
+            <Counter
+              counter={counter}
+              decrement={value => decrement(value)}
+              increment={value => increment(value)}
+            />
+          </ButtonGhost>
+
+          <ButtonGhost>
+            <Range
+              range={rangeInput.get('range')}
+              setRange={range => setRange(range)}
+            />
+          </ButtonGhost>
+
+          <ButtonGhost>
+            <Link to="/extension">
+              <div className={styles.menu}>
+                <i className="glyphicon glyphicon-filter" /> More Filters
+                <i className="glyphicon glyphicon-menu-down" />
+              </div>
+            </Link>
+          </ButtonGhost>
+
+          <ButtonGhost>
+            <Link to="/list">
+              <div className={styles.menu}>
+                <i className="glyphicon glyphicon-map-marker" /> MAP VIEW
+              </div>
+            </Link>
+          </ButtonGhost>
+
         </div>
 
         <div className={styles.landing}>

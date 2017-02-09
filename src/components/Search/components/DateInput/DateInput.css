@@ -12,13 +12,18 @@
 }
 
 .dropdown button {
+   height: 100%;
+    opacity: 1; 
+    border: 0; 
+    background: transparent; 
   font-size: 1.25em;
-    background-color: #FAFAFA;
+  height: 60px;
+    /*background-color: #FAFAFA;*/
     width: 100%;
-    border: 1px solid #BDBDBD;
+    /*border: 1px solid #BDBDBD;*/
     outline: none;
-    padding: 8px;
-    margin: 0 0 8px 0;
+    /*padding: 8px;*/
+    /*margin: 0 0 8px 0;*/
     text-align: left;
     cursor: pointer;
 }
