@@ -13,6 +13,7 @@ export default class Range extends Component {
     this.handleDocumentClick = this.handleDocumentClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.onToggle = this.onToggle.bind(this);
+    this.onSend = this.onSend.bind(this);
   }
   componentDidMount() {
     global.window.addEventListener('click', this.handleDocumentClick);
@@ -22,6 +23,10 @@ export default class Range extends Component {
   }
   onToggle() {
     this.setState({ isOpen: !this.state.isOpen });
+  }
+  onSend() {
+    this.props.onSavePriceRange(this.props.range);
+    this.onToggle();
   }
   handleChange(values) {
     this.props.onSetPriceRange(values);
@@ -46,6 +51,9 @@ export default class Range extends Component {
             value={this.props.range}
             onChange={this.handleChange}
           />
+          <button className="btn btn-default" onClick={this.onSend}>
+          Send
+          </button>
         </div>
       </div>
     );

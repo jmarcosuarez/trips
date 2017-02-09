@@ -13,7 +13,7 @@ class Search extends Component {
     const {
       guestCounter, onIncrementGuest, onDecrementGuest,
       dateInput, onSetDates,
-      rangeInput, onSetPriceRange,
+      rangeInput, onSetPriceRange, onSavePriceRange,
     } = this.props;
     return (
       <div>
@@ -37,6 +37,7 @@ class Search extends Component {
             <Range
               range={rangeInput.get('range')}
               onSetPriceRange={range => onSetPriceRange(range)}
+              onSavePriceRange={range => onSavePriceRange(range)}
             />
           </ButtonGhost>
 
@@ -76,6 +77,7 @@ Search.propTypes = {
   onSetDates: PropTypes.func.isRequired,
   // rangeInput: PropTypes.object,
   onSetPriceRange: PropTypes.func.isRequired,
+  onSavePriceRange: PropTypes.func.isRequired,
 };
 
 export default Search;

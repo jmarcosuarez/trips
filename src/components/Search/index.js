@@ -23,6 +23,7 @@ function mapDispatchToProps(dispatch) {
     onDecrementGuest: bindActionCreators(actions.decrementGuest, dispatch),
     onSetDates: bindActionCreators(actions.setDates, dispatch),
     onSetPriceRange: bindActionCreators(actions.setPriceRange, dispatch),
+    onSavePriceRange: bindActionCreators(actions.savePriceRange, dispatch),
   };
 }
 
