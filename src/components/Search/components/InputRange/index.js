@@ -51,7 +51,7 @@ export default class Range extends Component {
             value={this.props.range}
             onChange={this.handleChange}
           />
-          <button className="btn btn-default" onClick={this.onSend}>
+          <button className={`${styles.sendButton} btn btn-default`} onClick={this.onSend}>
           Send
           </button>
         </div>

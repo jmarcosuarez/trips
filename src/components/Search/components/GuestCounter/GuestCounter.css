@@ -8,20 +8,19 @@
 }
 
 .dropdown button {
-   height: 100%;
-    opacity: 1; 
-    border: 0; 
-    background: transparent; 
+  height: 100%;
+  opacity: 1; 
+  border: 0; 
+  background: transparent; 
   font-size: 1.25em;
   height: 60px;
-    /*background-color: #FAFAFA;*/
-    width: 100%;
-    /*border: 1px solid #BDBDBD;*/
-    outline: none;
-    padding: 0 8px;
-    /*margin: 0 0 8px 0;*/
-    text-align: left;
-    cursor: pointer;
+  /*background-color: #FAFAFA;*/
+  /*border: 1px solid #BDBDBD;*/
+  outline: none;
+  padding: 0 8px;
+  /*margin: 0 0 8px 0;*/
+  text-align: left;
+  cursor: pointer;
 }
 
 .dropdown button > i {
@@ -30,17 +29,29 @@
 
 .dropdown > div {
   font-size: 1.25em;
-    background-color: #FAFAFA;
-    display: none;
-    z-index: 1;
-    position: absolute;
-    min-width: 250px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border: 1px solid #BDBDBD;
+  background-color: #FAFAFA;
+  display: none;
+  z-index: 1;
+  position: absolute;
+  min-width: 250px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #BDBDBD;
 }
 
 .dropdown .active {
-    display: block;
+  display: block;
+}
+
+.dropdown .active button {
+  margin: 10px;
+  padding: 0 40px;
+  border: 1px solid #BDBDBD !important;
+  background: #fff !important; 
+  
+}
+
+.dropdown .active button:hover {
+  background: #FAFAFA !important; 
 }

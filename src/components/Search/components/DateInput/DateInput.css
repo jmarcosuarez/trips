@@ -13,19 +13,18 @@
 
 .dropdown button {
    height: 100%;
-    opacity: 1; 
-    border: 0; 
-    background: transparent; 
+  opacity: 1; 
+  border: 0; 
+  background: transparent; 
   font-size: 1.25em;
   height: 60px;
-    /*background-color: #FAFAFA;*/
-    width: 100%;
-    /*border: 1px solid #BDBDBD;*/
-    outline: none;
-    padding: 8px;
-    /*margin: 0 0 8px 0;*/
-    text-align: left;
-    cursor: pointer;
+  /*background-color: #FAFAFA;*/
+  /*border: 1px solid #BDBDBD;*/
+  outline: none;
+  padding: 8px;
+  /*margin: 0 0 8px 0;*/
+  text-align: left;
+  cursor: pointer;
 }
 
 .dropdown button > i {
@@ -34,20 +33,22 @@
 
 .dropdown > div {
   font-size: 1.25em;
-    background-color: #FAFAFA;
-    display: none;
-    z-index: 1;
-    position: absolute;
-    min-width: 315px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border: 1px solid #BDBDBD;
+  background-color: #FAFAFA;
+  display: none;
+  z-index: 1;
+  position: absolute;
+  min-width: 315px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #BDBDBD;
+  text-align: right;
 }
 
 .dropdown .active {
     display: block;
 }
+
 /*
 input {
     opacity: 1; // Restore the opacity
@@ -57,3 +58,13 @@ input {
     pointer-events: none; // Remove pointer events to be safe? 
 }
 */
+
+.sendButton {
+  border: 1px solid #BDBDBD !important;
+  background: #fff !important; 
+  margin: 10px 5px 5px;
+}
+
+.sendButton:hover {
+  background: #FAFAFA !important; 
+}
