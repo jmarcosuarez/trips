@@ -39,7 +39,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 List.propTypes = {
-  currentFilters: PropTypes.number,
+  // currentFilters: PropTypes.instanceOf(List),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

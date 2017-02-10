@@ -3,7 +3,7 @@ import ButtonInline from '../ButtonInline';
 
 import styles from './FilterList.css';
 
-function PlaylistItem({ item }) {
+function FilterlistItem({ item }) {
   return (
     <li>
       <ButtonInline>
@@ -17,15 +17,15 @@ const FilterList = ({ currentFilters }) =>
   <div className={styles.filterList}>
     <ul>
       {
-        currentFilters.map((value, key) => {
-          return <PlaylistItem item={value} />;
+        currentFilters.filter(i => i.get('active')).map((value, key) => {
+          return <FilterlistItem key={key} item={value} />;
         })
       }
     </ul>
   </div>;
 
 FilterList.propTypes = {
-  // currentFilters: PropTypes.string,
+  // currentFilters: PropTypes.instanceOf(FilterList),
 };
 
 export default FilterList;

@@ -1,4 +1,4 @@
-import { TRACKS_SET } from './StreamActions';
+import { TRACKS_SET } from './HomeActions';
 
 
 const initialState = [];
