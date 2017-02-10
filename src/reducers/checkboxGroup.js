@@ -18,6 +18,7 @@ const initialState = fromJS(
       { storeId: 'Townhouse', initial: false },
       { storeId: 'Loft', initial: false },
     ],
+    cbGroupActive: false,
   }
 );
 
@@ -27,9 +28,16 @@ export default function (state = initialState, action) {
       return setCheckbox(state, action);
     case actionTypes.GET_SELECTED_CHECKBOXES:
       return getCheckboxesSelected(state, action);
+    case actionTypes.TOGGLE_CB_GROUP:
+      return toggleCbGroup(state);
   }
   return state;
 }
+
+function toggleCbGroup(state, action) {
+  return !state.get('cbGroupActive');
+}
+
 
 function setCheckbox(state, action) {
   const { checkboxName, checkboxGroupName } = action;

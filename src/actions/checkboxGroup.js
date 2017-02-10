@@ -10,6 +10,12 @@ export function toggle(checkboxName, checkboxGroupName) {
   };
 }
 
+export function toggleCbGroup() {
+  return {
+    type: actionTypes.TOGGLE_CB_GROUP,
+  };
+}
+
 /**
   * Helper function:
   * For saving filtering data we need the key of this specific item on the filters store

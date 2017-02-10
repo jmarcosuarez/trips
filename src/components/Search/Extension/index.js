@@ -7,6 +7,7 @@ import Extension from './presenter';
 
 function mapStateToProps(state) {
   const checkboxGroup = state.checkboxGroup;
+  const cbGroupActive = state.checkboxGroup.cbGroupActive;
   const perfectOption = state.perfectOption;
   const bedroom = state.bedroom;
   const instantBookCheckbox = state.instantBookCheckbox;
@@ -15,6 +16,7 @@ function mapStateToProps(state) {
   return {
     bedroom,
     checkboxGroup,
+    cbGroupActive,
     perfectOption,
     instantBookCheckbox,
     currentFilters,
@@ -25,6 +27,7 @@ function mapDispatchToProps(dispatch) {
     onIncrementBedroom: bindActionCreators(actions.incrementBedroom, dispatch),
     onDecrementBedroom: bindActionCreators(actions.decrementBedroom, dispatch),
     onSetCheckboxGroupItem: bindActionCreators(actions.setCheckbox, dispatch),
+    onToggleCbGroup: bindActionCreators(actions.toggleCbGroup, dispatch),
     onSetPerfectOption: bindActionCreators(actions.setPerfectOption, dispatch),
     onFilterSend: bindActionCreators(actions.onFilterSend, dispatch),
     onFilterCancel: bindActionCreators(actions.onFilterCancel, dispatch),

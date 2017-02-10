@@ -1,6 +1,6 @@
 import { setCounter, incrementGuest, decrementGuest } from './guestCounter';
 import { setDates } from './dateInput';
-import { setCheckbox } from './checkboxGroup';
+import { setCheckbox, toggleCbGroup } from './checkboxGroup';
 import { setPriceRange, savePriceRange } from './rangeInput';
 import { setPerfectOption } from './perfectOption';
 import { setBedroom, incrementBedroom, decrementBedroom } from './bedroom';
@@ -10,7 +10,7 @@ import { instantBookToggle } from './instantBook';
 export {
   setCounter, incrementGuest, decrementGuest,
   setDates,
-  setCheckbox,
+  setCheckbox, toggleCbGroup,
   setPriceRange, savePriceRange,
   setPerfectOption,
   setBedroom, incrementBedroom, decrementBedroom,

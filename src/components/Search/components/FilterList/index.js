@@ -7,7 +7,7 @@ function PlaylistItem({ item }) {
   return (
     <li>
       <ButtonInline>
-        {`${item.get('id')}: ${item.get('value')}`}
+        {item.get('id')}
       </ButtonInline>
     </li>
   );

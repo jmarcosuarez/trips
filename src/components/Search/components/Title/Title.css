@@ -1,14 +1,7 @@
 .title {
   padding: 0;
   margin: 0;
-}
-
-.title ul {
-  list-style: none;
-}
-
-.title ul > li {
-  font-size: 1.50em;
+  font-size: 3em;
   text-align: left;
   font-variant-caps: all-petite-caps;
 }

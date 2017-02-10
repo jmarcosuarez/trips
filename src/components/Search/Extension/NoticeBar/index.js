@@ -2,26 +2,26 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import Button from '../../components/Button';
 import FilterList from '../../components/FilterList';
-
+import Title from '../../components/Title';
 import styles from './NoticeBar.css';
 
 const NoticeBar = ({ onFilterSend, onFilterCancel, currentFilters }) =>
   <div className={`${styles.noticeBar} clearfix`}>
-    <ul className={styles.button}>
-      <li>
-        <Link onClick={() => onFilterCancel()} to="/list">
-          Cancel
-        </Link>
-      </li>
-      <li>
-        <Link onClick={() => onFilterSend()}>
-          <Button
-            placeholder="See Homes"
-          />
-        </Link>
-      </li>
-    </ul>
-    <FilterList currentFilters={currentFilters} />
+    <Title title={'Notice Bar Title'} />
+    <div className={styles.button}>
+      <Link onClick={() => onFilterCancel()} to="/list">
+        Cancel
+      </Link>
+      {' '}
+      <Link onClick={() => onFilterSend()}>
+        <Button
+          placeholder="See Homes"
+        />
+      </Link>
+    </div>
+    <div className={styles.filters}>
+      <FilterList currentFilters={currentFilters} />
+    </div>
   </div>;
 
 NoticeBar.propTypes = {

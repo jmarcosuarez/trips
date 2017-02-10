@@ -4,19 +4,19 @@ import * as actionTypes from '../constants/actionTypes';
 const initialState = fromJS(
   {
     filters: [
-      { id: 'CheckIn', value: '' },
-      { id: 'CheckOut', value: '' },
-      { id: 'Guests', value: 1 },
-      { id: 'PriceBottom', value: 0 },
-      { id: 'PriceTop', value: 500 },
-      { id: 'Occasion', value: 0 },
-      { id: 'Bedrooms', value: 1 },
-      { id: 'Page', value: 1 },
-      { id: 'CityId', value: 1 },
-      { id: 'IsInstantBook', value: false },
-      { id: 'Neighbourhoods', value: [1, 2] },
-      { id: 'Amenities', value: [] },
-      { id: 'PropertyType', value: [] },
+      { id: 'CheckIn', value: '', active: false },
+      { id: 'CheckOut', value: '', active: false },
+      { id: 'Guests', value: 1, active: true }, // testing true
+      { id: 'PriceBottom', value: 0, active: false },
+      { id: 'PriceTop', value: 500, active: false },
+      { id: 'Occasion', value: 0, active: false },
+      { id: 'Bedrooms', value: 1, active: true }, // testing true
+      { id: 'Page', value: 1, active: false },
+      { id: 'CityId', value: 1, active: false },
+      { id: 'IsInstantBook', value: false, active: false },
+      { id: 'Neighbourhoods', value: [1, 2], active: true }, // testing true
+      { id: 'Amenities', value: [], active: false },
+      { id: 'PropertyType', value: [], active: false },
     ],
   }
 );

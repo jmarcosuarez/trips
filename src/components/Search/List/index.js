@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../../actions';
 import FilterList from '../components/FilterList';
+import Title from '../components/Title';
 import styles from './List.css';
 
 class List extends React.Component {
@@ -14,6 +15,7 @@ class List extends React.Component {
     const { currentFilters } = this.props;
     return (
       <div className={styles.list}>
+        <Title title={'Notice Bar Title'} />
         <FilterList currentFilters={currentFilters} />
       </div>
     );

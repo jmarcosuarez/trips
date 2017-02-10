@@ -24,6 +24,7 @@ const Extension = (
     instantBookCheckbox,
     onInstantBookToggle,
     currentFilters,
+    cbGroupActive,
   }) =>
 
     <div className={styles.extension}>
@@ -87,6 +88,7 @@ NoticeBar.propTypes = {
   onFilterCancel: PropTypes.func,
   instantBookCheckbox: PropTypes.bool,
   onInstantBookToggle: PropTypes.func,
+  cbGroupActive: PropTypes.bool,
 };
 
 export default Extension;
