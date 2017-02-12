@@ -59,17 +59,16 @@ function clearCurrentFilterValues(item, fields) {
 /** ON_FILTER_LIST_ITEM_CLICK,
  * Called when user clicks to delete a item on the filter list component
  * For the item sended here we need to:
- * 1. Remove active state in filter state
- * 2. Reset values from filter state
- * 3. Clear values from component state
- * 4. Reset the component, as in the case of Flatpickr and the number range selector
+ * 1. Clear values from component state
+ * 2. Remove entry in isFilterActive
+ * 3. Reset the component, as in the case of Flatpickr and the number range selector
  */
 export const deleteFilterItem = (item) => (dispatch, getState) => {
  // 1. Clear values from component state
   const itemId = item.get('id');
   const fields = itemId.split('_');
   dispatch(clearCurrentFilterValues(item, fields));
-  // 1. Remove entry in isFilterActive
+  // 2. Remove entry in isFilterActive
   const isActive = getState().filter.get('isFilterActive');
   const newFilterActiveList = isActive.delete(itemId);
   dispatch(deleteFilter(newFilterActiveList));

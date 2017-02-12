@@ -2,13 +2,14 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import * as rangeSelectors from '../../reducers/rangeInput';
 
 import Search from './presenter';
 
 function mapStateToProps(state) {
   const guestCounter = state.guestCounter;
   const dateInput = state.dateInput;
-  const rangeInput = state.rangeInput;
+  const rangeInput = rangeSelectors.getRangeInputArray(state);
 
 
   return {

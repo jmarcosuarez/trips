@@ -35,7 +35,7 @@ class Search extends Component {
 
           <MenuItem>
             <Range
-              range={rangeInput.get('range')}
+              range={rangeInput}
               onSetPriceRange={range => onSetPriceRange(range)}
               onSavePriceRange={range => onSavePriceRange(range)}
             />

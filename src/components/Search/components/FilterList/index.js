@@ -17,7 +17,6 @@ const FilterList = ({ currentFilters, onDeleteFilterItem }) =>
   <div className={styles.filterList}>
     <ul>
       {
-        // console.log(currentFilters, 'this is components/filterList')
         currentFilters.map((value, key) => {
           return <FilterlistItem key={key} item={value} onClick={onDeleteFilterItem} />;
         })
