@@ -12,11 +12,14 @@ class List extends React.Component {
   }
 
   renderToolBar() {
-    const { currentFilters } = this.props;
+    const { currentFilters, onDeleteFilterItem } = this.props;
     return (
       <div className={styles.list}>
         <Title title={'Notice Bar Title'} />
-        <FilterList currentFilters={currentFilters} />
+        <FilterList
+          currentFilters={currentFilters}
+          onDeleteFilterItem={(item) => onDeleteFilterItem(item)}
+        />
       </div>
     );
   }
@@ -29,17 +32,19 @@ class List extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    currentFilters: state.filter.get('filters'),
+    currentFilters: state.filter.get('isFilterActive'),
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
+    onDeleteFilterItem: bindActionCreators(actions.deleteFilterItem, dispatch),
   };
 }
 
 List.propTypes = {
   // currentFilters: PropTypes.instanceOf(List),
+  onDeleteFilterItem: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(List);

@@ -21,7 +21,7 @@ class DateInput extends Component {
   }
   componentWillReceiveProps(nextProps) {
     // Closes dropdown when the 2 dates are selected
-    if (this.state.isOpen && nextProps.dates.get('end') !== undefined) {
+    if (this.state.isOpen && nextProps.dates.get('dateInput_end_id') !== undefined) {
       this.setState({ isOpen: false });
     }
   }
@@ -46,7 +46,8 @@ class DateInput extends Component {
       // <div onClick={e => e.stopPropagation()} className={styles.dropdown}>
       <div className={styles.dropdown}>
         <button onClick={this.onToggle}>
-         From: {moment(dates.get('start')).format('MM/DD/YYYY')} - To: {moment(dates.get('end')).format('MM/DD/YYYY')}
+          From: {moment(dates.get('dateInput_start_id')).format('MM/DD/YYYY')}
+          - To: {moment(dates.get('dateInput_end_id')).format('MM/DD/YYYY')}
           <i className="glyphicon glyphicon-menu-down" />
         </button>
         <div className={this.state.isOpen ? `${styles.active}` : `${styles.notActive}`}>

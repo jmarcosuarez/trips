@@ -11,24 +11,81 @@ export function onFilterCancel() {
 }
 
 /**
- * Called when user clicks SEND BUTTON on the extended component
+ * Called from setFilterActive()
+ * Saves the active state to the filter store
  */
-// export function onFilterSend() {
-//   return {
-//     type: actionTypes.ON_FILTER_SEND,
-//   };
-// }
-
-/**
- * Called when any item is toggle/selected on the filter extension component
- */
-export function setFilterObject(key, value) {
+function setActive(flag) {
   return {
-    type: actionTypes.ON_FILTER_SAVE,
-    key,
-    value,
+    type: actionTypes.SET_ACTIVE_FILTER,
+    flag,
   };
 }
+
+/**
+ * Called from setFilterActive()
+ * Saves the active state to the filter store
+ */
+function clearActiveFilter(key) {
+  return {
+    type: actionTypes.CLEAR_ACTIVE_FILTER,
+    key,
+  };
+}
+
+/**
+ * Called from setFilterActive()
+ * Saves the active state to the filter store
+ */
+function clearFilterValue(key) {
+  return {
+    type: actionTypes.CLEAR_FILTER_VALUE,
+    key,
+  };
+}
+
+/** ON_FILTER_LIST_ITEM_CLICK,
+ * Called when user clicks to delete a item on the filter list component
+ * For the item sended here we need to:
+ * 1. Remove active state in filter state
+ * 2. Reset values from filter state
+ * 3. Clear values from component state
+ * 4. Reset the component, as in the case of Flatpickr and the number range selector
+ */
+export const deleteFilterItem = (item) => (dispatch, getState) => {
+  //  1. Remove active state in filter state
+  const key = getState().filter.get('filters').findIndex(listing => {
+    return listing.get('id') === item.get('id');
+  });
+  dispatch(clearActiveFilter(key));
+  //  2. Reset values from filter state
+  dispatch(clearFilterValue(key));
+  //  3. Clear values from component state
+  switch (key) {
+    case 0:
+      // getState().dateInput.set('start', 'no values');
+      // console.log(getState().dateInput.set('start', 'no values'));
+      break;
+    case 1:
+      // this.setState(getState().dateInput.set('end', undefined););
+      break;
+    default:
+      console.log(getState().dateInput.set('start', undefined));
+  }
+};
+
+/**
+ * Called from all components that affect the filtering
+ * Add flags of don't exist on isFilterActive store
+ */
+export const setFilterActive = (flags) => (dispatch, getState) => {
+  //  Sets the active state of the filter whos key is passed in
+  const isActive = getState().filter.get('isFilterActive');
+  flags.forEach(flag => {
+    if (!isActive.keySeq().contains(flag)) {
+      dispatch(setActive(flag));
+    }
+  });
+};
 
 /**
  * Helper: Adding params to url

@@ -15,3 +15,7 @@
   background: transparent;
   outline: none;
 }
+
+.buttonInline:hover {
+  text-decoration: line-through;
+}

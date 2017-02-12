@@ -4,8 +4,8 @@ import * as actionTypes from '../constants/actionTypes';
 
 const initialState = fromJS(
   {
-    start: [],
-    end: [],
+    dateInput_start_id: undefined,
+    dateInput_end_id: undefined,
   }
 );
 
@@ -19,8 +19,10 @@ export default function (state = initialState, action) {
 
 function setDates(state, action) {
   const { dates } = action;
+
   return state.merge({
-    start: dates[0],
-    end: dates[1],
+    dateInput_start_id: dates[0],
+    dateInput_end_id: dates[1],
   });
 }
+
