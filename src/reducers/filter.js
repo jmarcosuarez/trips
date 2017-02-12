@@ -67,8 +67,8 @@ export default function (state = initialState, action) {
       return setActiveFilter(state, action);
     case actionTypes.CLEAR_ACTIVE_FILTER:
       return clearActiveFilter(state, action);
-    case actionTypes.CLEAR_FILTER_VALUE:
-      return clearFilterValue(state, action);
+    // case actionTypes.CLEAR_FILTER_VALUE:
+    //   return clearFilterValue(state, action);
   }
   return state;
 }
@@ -84,18 +84,20 @@ function onFilterCancel(state) {
  * Set value at the key position
  * @key= Is the key on filters object where acting upon
  */
-function clearFilterValue(state, action) {
-  const { key } = action;
-  return state.setIn(['filters', key, 'value'], undefined);
-}
+// function clearFilterValue(state, action) {
+//   const { key } = action;
+//   return state.setIn(['filters', key, 'value'], undefined);
+// }
 
 /**
- * Set value at the key position
- * @key= Is the key on filters object where acting upon
+ * Called from filters action creator
+ * Sets a new List on isFilterActive
+ * @newFilterActiveList = The new list to be set
  */
 function clearActiveFilter(state, action) {
-  const { key } = action;
-  return state.setIn(['filters', key, 'active'], false);
+  const { newFilterActiveList } = action;
+  const isFilterActive = state.get('isFilterActive');
+  return state.set('isFilterActive', newFilterActiveList);
 }
 
 /**
@@ -112,34 +114,16 @@ function setActiveFilter(state, action) {
 /*  Selectors  */
 
 /**
- * Iterates through "isFilterActive" taking its ids and retreiving
- * data the filters store whos ids match.
+ * Iterates through filter store filtering
+ * the entries that have a key present in isFilterActive
  */
 export function getActiveFilters(state) {
   const filters = state.filter.get('filters');
   const isFilterActive = state.filter.get('isFilterActive');
-  // const result = isFilterActive.keySeq().forEach(
-  //   k => {
-      // const map1 = Map();
-      // const map2 = filters.find(f => f.get('id') === k);
-      // console.log(map2);
-      // filters.filter(x => x.get('id') === k).map(x => x.get('name'));
-  //   }
-  // );
-  //     console.log(result);
-  // return result;
-  // const value = state.filter.get('filters').filter(k => console.log(k));
-  // console.log();
-
-  const result = filters.filter(function(o1) {
-    // filter out (!) items in result2
-    return isFilterActive.some(function(o2, o3) {
-      // console.log(o1.get('id'), o3);
-      return o1.get('id') === o3;          // assumes unique id
+  const result = filters.filter(o1 => {
+    return isFilterActive.some((value, key) => {
+      return o1.get('id') === key;
     });
   });
-  // console.log(result.toJS());
-
   return result;
-  // return state.filter.get('isFilterActive');
 }

@@ -22,13 +22,13 @@ function setActive(flag) {
 }
 
 /**
- * Called from setFilterActive()
- * Saves the active state to the filter store
+ * Called from deleteFilterItem()
+ * Sets a new active list without the deleted filter
  */
-function clearActiveFilter(key) {
+function deleteFilter(newFilterActiveList) {
   return {
     type: actionTypes.CLEAR_ACTIVE_FILTER,
-    key,
+    newFilterActiveList,
   };
 }
 
@@ -36,10 +36,23 @@ function clearActiveFilter(key) {
  * Called from setFilterActive()
  * Saves the active state to the filter store
  */
-function clearFilterValue(key) {
+// function clearFilterValue(key) {
+//   return {
+//     type: actionTypes.CLEAR_FILTER_VALUE,
+//     key,
+//   };
+// }
+
+/**
+ * Called from deleteFilterItem() below
+ * All stores are listening to this action,
+ * fields is used to discriminate who needs to act
+ */
+function clearCurrentFilterValues(item, fields) {
   return {
-    type: actionTypes.CLEAR_FILTER_VALUE,
-    key,
+    type: actionTypes.RESET_FILTER_VALUES,
+    item,
+    fields,
   };
 }
 
@@ -52,30 +65,19 @@ function clearFilterValue(key) {
  * 4. Reset the component, as in the case of Flatpickr and the number range selector
  */
 export const deleteFilterItem = (item) => (dispatch, getState) => {
-  //  1. Remove active state in filter state
-  const key = getState().filter.get('filters').findIndex(listing => {
-    return listing.get('id') === item.get('id');
-  });
-  dispatch(clearActiveFilter(key));
-  //  2. Reset values from filter state
-  dispatch(clearFilterValue(key));
-  //  3. Clear values from component state
-  switch (key) {
-    case 0:
-      // getState().dateInput.set('start', 'no values');
-      // console.log(getState().dateInput.set('start', 'no values'));
-      break;
-    case 1:
-      // this.setState(getState().dateInput.set('end', undefined););
-      break;
-    default:
-      console.log(getState().dateInput.set('start', undefined));
-  }
+ // 1. Clear values from component state
+  const itemId = item.get('id');
+  const fields = itemId.split('_');
+  dispatch(clearCurrentFilterValues(item, fields));
+  // 1. Remove entry in isFilterActive
+  const isActive = getState().filter.get('isFilterActive');
+  const newFilterActiveList = isActive.delete(itemId);
+  dispatch(deleteFilter(newFilterActiveList));
 };
 
 /**
  * Called from all components that affect the filtering
- * Add flags of don't exist on isFilterActive store
+ * Add flags if don't exist on isFilterActive store
  */
 export const setFilterActive = (flags) => (dispatch, getState) => {
   //  Sets the active state of the filter whos key is passed in
