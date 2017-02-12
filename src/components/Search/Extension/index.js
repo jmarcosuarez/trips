@@ -2,6 +2,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../../actions';
+import * as filtersSelectors from '../../../reducers/filter';
 
 import Extension from './presenter';
 
@@ -11,7 +12,7 @@ function mapStateToProps(state) {
   const perfectOption = state.perfectOption;
   const bedroom = state.bedroom;
   const instantBookCheckbox = state.instantBookCheckbox;
-  const currentFilters = state.filter.get('filters');
+  const currentFilters = filtersSelectors.getActiveFilters(state);
 
   return {
     bedroom,
@@ -32,6 +33,7 @@ function mapDispatchToProps(dispatch) {
     onFilterSend: bindActionCreators(actions.onFilterSend, dispatch),
     onFilterCancel: bindActionCreators(actions.onFilterCancel, dispatch),
     onInstantBookToggle: bindActionCreators(actions.instantBookToggle, dispatch),
+    onDeleteFilterItem: bindActionCreators(actions.deleteFilterItem, dispatch),
   };
 }
 

@@ -1,6 +1,10 @@
+import { List } from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
-import { setFilterObject } from '../actions/filter';
+import { setFilterActive } from '../actions/filter';
 
+/**
+ * Saves values to store
+ */
 function selectOption(option) {
   return {
     type: actionTypes.SET_PERFECT_OPTION,
@@ -13,13 +17,10 @@ function selectOption(option) {
  * @Option=Number
  */
 export const setPerfectOption = (option) => (dispatch, getState) => {
+  // 1. Send values to reducer for saving
   dispatch(selectOption(option));
-  // To save this filter we need its position in the filter object to save the new value
-  // That value to be save will be a number for this dropdown
-  const key = getState().filter.get('filters').findIndex(listing => {
-    return listing.get('id') === 'Occasion';
-  });
-  const value = option;
-  // Dispatch it to the filter action, both params are numbers
-  dispatch(setFilterObject(key, value));
+  // 2. Send flag to filter reducer and set it active,
+  // Sending the execution to the filter store to set this filter as active
+  const flags = List(['perfectOption_optionSelected_id']);
+  dispatch(setFilterActive(flags));
 };

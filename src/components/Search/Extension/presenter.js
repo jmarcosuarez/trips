@@ -25,6 +25,7 @@ const Extension = (
     onInstantBookToggle,
     currentFilters,
     cbGroupActive,
+    onDeleteFilterItem,
   }) =>
 
     <div className={styles.extension}>
@@ -33,6 +34,7 @@ const Extension = (
         currentFilters={currentFilters}
         onFilterSend={() => onFilterSend()}
         onFilterCancel={() => onFilterCancel()}
+        onDeleteFilterItem={onDeleteFilterItem}
       />
 
       <OptionsBar
@@ -89,6 +91,7 @@ NoticeBar.propTypes = {
   instantBookCheckbox: PropTypes.bool,
   onInstantBookToggle: PropTypes.func,
   cbGroupActive: PropTypes.bool,
+  onDeleteFilterItem: PropTypes.func,
 };
 
 export default Extension;
