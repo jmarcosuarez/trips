@@ -1,5 +1,6 @@
+import { List } from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
-import { setFilterObject } from '../actions/filter';
+import { setFilterActive } from '../actions/filter';
 
 export function setCounter(count) {
   return {
@@ -27,13 +28,11 @@ function decrement() {
   * need the current value to be saved (number)
   */
 const prepareAndSendToFilter = () => (dispatch, getState) => {
-  const key = getState().filter.get('filters').findIndex(listing => {
-    return listing.get('id') === 'Guests';
-  });
   const value = getState().guestCounter;
+  const flags = List(['guestCounter_guest_id']);
   // When decrementing just do it until the value of 1
   if (value >= 1 && value <= 11) {
-    dispatch(setFilterObject(key, value));
+    dispatch(setFilterActive(flags));
   }
 };
 
