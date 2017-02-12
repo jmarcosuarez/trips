@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../../actions';
 import FilterList from '../components/FilterList';
 import Title from '../components/Title';
+import * as filtersSelectors from '../../../reducers/filter';
+
 import styles from './List.css';
 
 class List extends React.Component {
@@ -32,7 +34,8 @@ class List extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    currentFilters: state.filter.get('isFilterActive'),
+    // currentFilters: state.filter.get('isFilterActive'),
+    currentFilters: filtersSelectors.getActiveFilters(state),
   };
 }
 

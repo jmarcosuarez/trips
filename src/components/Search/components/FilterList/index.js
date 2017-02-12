@@ -7,7 +7,7 @@ function FilterlistItem({ item, onClick }) {
   return (
     <li>
       <ButtonInline onClick={() => onClick(item)}>
-        {item}
+        {item.get('name')}
       </ButtonInline>
     </li>
   );
@@ -17,8 +17,9 @@ const FilterList = ({ currentFilters, onDeleteFilterItem }) =>
   <div className={styles.filterList}>
     <ul>
       {
+        // console.log(currentFilters, 'this is components/filterList')
         currentFilters.map((value, key) => {
-          return <FilterlistItem key={key} item={key} onClick={onDeleteFilterItem} />;
+          return <FilterlistItem key={key} item={value} onClick={onDeleteFilterItem} />;
         })
       }
     </ul>

@@ -1,4 +1,4 @@
-import { fromJS } from 'immutable';
+import { fromJS, Map, toJS } from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
 
 const initialState = fromJS(
@@ -106,4 +106,40 @@ function setActiveFilter(state, action) {
   const { flag } = action;
   const isFilterActive = state.get('isFilterActive');
   return state.setIn(['isFilterActive', flag], true);
+}
+
+
+/*  Selectors  */
+
+/**
+ * Iterates through "isFilterActive" taking its ids and retreiving
+ * data the filters store whos ids match.
+ */
+export function getActiveFilters(state) {
+  const filters = state.filter.get('filters');
+  const isFilterActive = state.filter.get('isFilterActive');
+  // const result = isFilterActive.keySeq().forEach(
+  //   k => {
+      // const map1 = Map();
+      // const map2 = filters.find(f => f.get('id') === k);
+      // console.log(map2);
+      // filters.filter(x => x.get('id') === k).map(x => x.get('name'));
+  //   }
+  // );
+  //     console.log(result);
+  // return result;
+  // const value = state.filter.get('filters').filter(k => console.log(k));
+  // console.log();
+
+  const result = filters.filter(function(o1) {
+    // filter out (!) items in result2
+    return isFilterActive.some(function(o2, o3) {
+      // console.log(o1.get('id'), o3);
+      return o1.get('id') === o3;          // assumes unique id
+    });
+  });
+  // console.log(result.toJS());
+
+  return result;
+  // return state.filter.get('isFilterActive');
 }
