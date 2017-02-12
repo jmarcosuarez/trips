@@ -46,7 +46,7 @@ function deleteFilter(newFilterActiveList) {
 /**
  * Called from deleteFilterItem() below
  * All stores are listening to this action,
- * fields is used to discriminate who needs to act
+ * When clicking filter to delete it, this resets values in the actual filter deleted
  */
 function clearCurrentFilterValues(item, fields) {
   return {

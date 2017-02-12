@@ -1,5 +1,6 @@
+import { List } from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
-import { setFilterObject } from '../actions/filter';
+import { setFilterActive } from '../actions/filter';
 
 export function setBedroom(bedroom) {
   return {
@@ -21,16 +22,13 @@ function decrement() {
 }
 
 /**
-  * Helper fucntion:
-  * For saving filtering data we need the key of this specific item on the filters store
-  * also we need the new value to be saved
+  * Helper function:
+  * Just send flags to filter actioc creator, there filter will be set active
   */
 const prepareAndSendToFilter = () => (dispatch, getState) => {
-  const key = getState().filter.get('filters').findIndex(listing => {
-    return listing.get('id') === 'Bedrooms';
-  });
-  const value = getState().bedroom;
-  dispatch(setFilterObject(key, value));
+  const flags = List(['bedroom_bedrooms_id']);
+  // Here we send the execution to the filter store to set this filter as active
+  dispatch(setFilterActive(flags));
 };
 
 export const incrementBedroom = () => (dispatch) => {
