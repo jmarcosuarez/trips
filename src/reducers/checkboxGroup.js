@@ -28,6 +28,8 @@ export default function (state = initialState, action) {
       return setCheckbox(state, action);
     case actionTypes.GET_SELECTED_CHECKBOXES:
       return getCheckboxesSelected(state, action);
+    case actionTypes.RESET_FILTER_VALUES:
+      return resetValues(state, action);
     case actionTypes.TOGGLE_CB_GROUP:
       return toggleCbGroup(state);
   }
@@ -54,6 +56,34 @@ function getCheckboxesSelected(state, action) {
   // console.log(action);
   return state;
 }
+
+// Reset filter values is triggered for all filters
+// Make sure this one was triggered for this reducer in mind
+function resetValues(state, action) {
+  const { item, fields } = action;
+  let flags;
+  // console.log(state, action);
+  if (fields[0] === 'checkboxGroup') {
+    switch (fields[1]) {
+      case 'neighbourhoods':
+        return state.get('neighbourhoods').map(
+          k => k.set('initial', false)
+        );
+        // return state.setIn(['neighbourhoods', 'all of them! use map?', 'initial'], false);
+      case 'amenities':
+        // flags = List(['checkboxGroup_amenities_id']);
+      case 'propertyType':
+        // flags = List(['checkboxGroup_propertyType_id']);
+      default:
+        break;
+    }
+  }
+  // if (fields[0] === 'instantBookCheckBox') {
+  //   return state.set('initial', false);
+  // }
+  return state;
+}
+
 
 // //  Selectors
 // export function getSelected(state) {

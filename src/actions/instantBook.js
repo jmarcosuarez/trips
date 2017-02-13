@@ -14,7 +14,7 @@ function toggle(option) {
   * For saving filtering data we need the key of this specific item on the filters store
   * also we need the new value to be saved
   */
-const prepareAndSendToFilter = () => (dispatch, getState) => {
+const prepareAndSendToFilter = () => (dispatch) => {
   const flags = List(['instantBookCheckBox_id']);
   dispatch(setFilterActive(flags));
 };
