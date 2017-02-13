@@ -1,5 +1,6 @@
+import { List } from 'immutable';
 import * as actionTypes from '../constants/actionTypes';
-import { setFilterObject } from '../actions/filter';
+import { setFilterActive } from '../actions/filter';
 
 function toggle(option) {
   return {
@@ -14,11 +15,8 @@ function toggle(option) {
   * also we need the new value to be saved
   */
 const prepareAndSendToFilter = () => (dispatch, getState) => {
-  const key = getState().filter.get('filters').findIndex(listing => {
-    return listing.get('id') === 'IsInstantBook';
-  });
-  const value = getState().instantBookCheckbox.getIn(['instantBook', 'initial']);
-  dispatch(setFilterObject(key, value));
+  const flags = List(['instantBookCheckBox_id']);
+  dispatch(setFilterActive(flags));
 };
 /**
  * Called after saving selection on extended filter component

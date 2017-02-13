@@ -33,8 +33,8 @@ const OptionsBar = ({ perfectOption = [], bedroom, onIncrementBedroom, onDecreme
         </li>
         <li>
           <Checkbox
-            label={instantBookCheckbox.getIn(['instantBook', 'storeId'])}
-            checked={instantBookCheckbox.getIn(['instantBook', 'initial'])}
+            label={instantBookCheckbox.get('storeId')}
+            checked={instantBookCheckbox.get('initial')}
             checkboxChange={option => onInstantBookToggle(option)}
           />
         </li>

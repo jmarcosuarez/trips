@@ -32,8 +32,8 @@ const initialState = fromJS(
         id: 'bedroom_bedrooms_id',
         name: 'Bedrooms',
       },
-      instantBookCheckBox_instantBook_id: {
-        id: 'instantBookCheckBox_instantBook_id',
+      instantBookCheckBox_id: {
+        id: 'instantBookCheckBox_id',
         name: 'IsInstantBook',
       },
       checkboxGroup_neighbourhoods_id: {
@@ -52,7 +52,7 @@ const initialState = fromJS(
     isFilterActive: {
       guestCounter_guest_id: true,
       bedroom_bedrooms_id: true,
-      instantBookCheckBox_instantBook_id: true,
+      instantBookCheckBox_id: true,
     },
   }
 );
