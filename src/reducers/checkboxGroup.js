@@ -70,9 +70,9 @@ function resetValues(state, action) {
           k => k.set('initial', false)
         );
         // return state.setIn(['neighbourhoods', 'all of them! use map?', 'initial'], false);
-      case 'amenities':
+      // case 'amenities':
         // flags = List(['checkboxGroup_amenities_id']);
-      case 'propertyType':
+      // case 'propertyType':
         // flags = List(['checkboxGroup_propertyType_id']);
       default:
         break;
